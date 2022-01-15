@@ -1,0 +1,46 @@
+Do zaimplementowania aplikacji internetowej wykorzystane zostały biblioteka React oraz framework
+Next.js. Oba wykorzystywane są do budowania interaktywnych interfejsów użytkownika. React jest
+biblioteką deklaratywną -- oznacza to, że podczas pisania kodu źródłowego dla aplikacji opisuje się
+warunki jakie dany element interfejsu powinien spełniać~w~przeciwieństwie do podejścia
+imperatywnego, gdzie podaje się szczegółową listę kroków prowadzących do osiągnięcia założonego celu
+\cite{react-main}. Next.js jest frameworkiem zbudowanym na podstawie React.
+Zapewnia środowisko~z~funkcjami do tworzenia aplikacji: renderowanie hybrydowe -- opierające się na
+wstępnym wygenerowaniu elementów aplikacji~i~następnie aktualizowanie ich~w~miarę potrzeb,
+inteligentne łączenie kodu źródłowego~w~pakiety, wstępne ładowanie tras (które łączą różne elementy
+aplikacji), wszystko to zapewnione jest bez uprzedniej, dodatkowej konfiguracji \cite{nextjs-main}.
+
+Dodatkowo wykorzystane zostały biblioteki pomocnicze, które przyspieszały~i~znacznie
+ułatwiały budowanie interfejsu użytkownika. Wykorzystana biblioteka Chakra UI daje dostęp do wielu
+gotowych, wystylizowanych komponentów, które można,~w~miarę potrzeb dostosować, aby efekt końcowy
+był jak najbliższy projektowi. Wykorzystane zostały także biblioteki React Latex oraz Recharts.
+Pierwsza pozwala na renderowanie formuł matematycznych~w~aplikacji, używając do tego zapisu
+znanego~z~pakietu LaTeX, druga natomiast służy do generowania wykresów, które pojawiają
+się~w~aplikacji. Wszystkie wykorzystane biblioteki oraz frameworki należą do rodziny Open Source --
+ich kod źródłowy jest dostępny publicznie, można go wykorzystywać~i~modyfikować~w~swoich
+projektach, zgodnie~z~opublikowaną licencją \cite{snyk-licences, snyk-mit}.
+
+Aplikacja została zaimplementowana wykorzystując do tego język TypeScript. Jest on nadzbiorem --
+rozszerzeniem -- języka JavaScript. TypeScript umożliwia statyczne typowanie oraz programowanie
+obiektowe, gdzie JavaScript jest językiem skryptowym. Wykorzystanie TypeScript~w~programowaniu
+pozwala na unikanie błędów, które~w~późniejszym czasie mogłyby doprowadzić nieplanowanego
+zachowania tworzonej aplikacji. Aplikacje, napisane~w~TypeScript, są interpretowane oraz
+kompilowane do JavaScript, aby można było je uruchomić przykładowo~w~przeglądarce
+internetowej \cite{ts-main}.
+
+Niniejszy rozdział ma na celu:
+\begin{itemize}
+  \item[--] przedstawienie jak zbudowane zostały główne elementy interfejsu użytkownika,
+  \item[--] pokazanie jak odbywa się konfiguracja elementów aplikacji oraz zarządzanie stanem
+        komponentów,
+  \item[--] zaprezentowanie, że kod odpowiedzialny za generowanie danych oraz weryfikację ich
+        jest zaimplementowany na podstawie teorii przetworników pomiarowych.
+\end{itemize}
+
+\section{Implementacja interfejsu użytkownika}
+\input{text/app/ui}
+
+\section{Przekazywanie danych pomiędzy komponentami}
+\input{text/app/context}
+
+\section{Implementacja teorii sensorów pomiarowych}
+\input{text/app/sensors-code}

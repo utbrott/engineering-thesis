@@ -1,0 +1,46 @@
+Zaimplementowany~w~aplikacji sensor LVDT należy do grupy czujników wykorzystujących zmiany
+parametrów obwodu -- indukcyjności. Czujnik typu LVDT (ang. Linear Variable Differential
+Transformer, transformatorowy czujnik przemieszczeń liniowych) zbudowany jest na podstawie
+transformatora różnicowego. Posiada on trzy uzwojenia -- pierwotne oraz dwa wtórne, które nawijane
+są na cylindryczną, nieprzewodzącą obudowę. Wewnątrz obudowy znajduje się rdzeń ferromagnetyczny,
+który może się swobodnie poruszać. Schemat układu przetwornika LVDT przedstawiono na
+rysunku~\ref{img:lvdt}.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{sensor-theory/displacement-lvdt}
+  \caption{\label{img:lvdt}Schemat układu przetwornika LVDT}
+\end{figure}
+
+Uzwojenie pierwotne zasilane jest napięciem przemiennym.~W~uzwojeniach wtórych (oznaczone jako Ns na
+schemacie) indukują się napięcia, które zależne są od położenia rdzenia wewnątrz obudowy.~W~stanie
+ustalonym -- gdy rdzeń znajduje się~w~równej odległości od obu cewek wtórnych -- napięcia będą sobie
+równe. Ponieważ układ sensora LVDT jest zbudowany na podstawie transformatora różnicowego, to
+napięcie na wyjściu całego układu będzie równe różnicy napięć na cewkach wtórnych. Zależność tę
+opisuje wzór \cite{sensory_wykład}:
+
+\begin{equation}
+  U_{wy}=f\cdot I_p\cdot\bigg(4\pi\cdot N_p N_w\cdot \mu_0\cdot l_p\cdot\frac{x}{3l_w}\cdot
+  \log{\Big(\frac{r_o}{r_i}\Big)}\bigg)\bigg(1-\frac{x^2}{2l_p^2}\bigg)
+\end{equation}
+
+\begin{eqparams}
+  f & częstotliwość zasilania układu,\\
+  I_p & prąd~w~uzwojeniu pierwotnym $I_p=\cfrac{U_{wej}}{R}$,\\
+  N_p,\,N_w & liczba zwojów~w~uzwojeniach, odpowiednio~w~pierwotnym~i~wtórnych,\\
+  l_p,\,l_w & długości uzwojeń, odpowiednio pierwotnego~i~wtórnych,\\
+  \mu_0 & przenikalność magnetyczna próżni ($4\pi\cdot 10^{-7}$),\\
+  x & przesunięcie rdzenia względem stanu ustalonego,\\
+  \cfrac{r_o}{r_i} & stosunek promieni zewnętrzynych~i~wewnętrznych układu cewki,\\
+\end{eqparams}
+
+Charakterystyka przetwarzania sensora, przedstawiona na rysunku \ref{img:transfer-lvdt}, ma kształt
+litery ,,V'', obie strony są symetryczne względem punktu zerowego -- stanu zrównoważenia. Dodatkowo,
+napięcie wyjściowe nie jest zerowe~w~stanie równowagi -- jest to spowodowane niewielkimi różnicami
+pomiędzy uzwojeniami wtórnymi \cite{sensory_wykład}.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{sensor-theory/transfer-lvdt}
+  \caption{\label{img:transfer-lvdt}Charakterystyka przetwarzania sensora~w~zależności od przesunięcia.}
+\end{figure}

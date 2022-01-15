@@ -1,0 +1,27 @@
+Obecna na całym świecie pandemia postawiła wykładowców oraz studentów przed dużym wyzwaniem -- jak
+przeprowadzić zajęcia laboratoryjne~w~momencie, gdy edukacja odbywa się zdalnie
+i~student nie może pojawić się na uczelni.
+
+W tej sytuacji bardzo przydatne okazują się narzędzia pozwalające na symulowanie ćwiczeń, które
+byłby wykonywane stacjonarnie~w~laboratorium na uczelni. Jednakże~z~uwagi na to, że
+problem pojawił się niedawno, nie ma zbyt wielu dostępnych rozwiązań.
+
+Celem pracy było zaprojektowanie oraz implementacja aplikacja internetowej, która posiada możliwość
+wykonywania teoretycznej wersji ćwiczeń~z~laboratorium Przetworników Pomiarowych. W~aplikacji
+dostępne są zadania dla każdego~z~sensorów, do wykonania przez studenta. Każdy~z~sensorów posiada
+możliwość wybrania jego konfiguracji (materiał~z~jakiego jest on wykonany, etc.). Laboratoria
+wyposażone są~w~generowane losowo (w pewnym zakresie, aby jak najlepiej odzwierciedlić zachowanie
+konkretnego sensora) zestawy danych do obliczeń. Dodatkowo każde ćwiczenie posiada skrypty
+sprawdzające czy obliczona~i~wpisana wartość (odpowiedź) jest poprawna. Po wykonaniu
+wszystkich zadań dla danego laboratorium udostępniana jest możliwość zobaczenia,~a~także zapisania
+na komputerze użytkownika, charakterystyki dla danego sensora, która związana jest~z~wykonywanym
+ćwiczeniem.
+
+Do implementacji wykorzystane zostały frameworki
+\textit{Next.js}\footnote{\href{https://nextjs.org/}{https://nextjs.org/}} oraz
+\textit{React}\footnote{\href{https://reactjs.org/}{https://reactjs.org/}}, pozwalające na tworzenie
+interaktywnych interfejsów użytkownika. Dodatkowo wykorzystana została biblioteka komponentów
+\textit{Chakra UI}\footnote{\href{https://chakra-ui.com/}{https://chakra-ui.com/}} oraz inne
+mniejsze biblioteki, które wspomagały tworzenie elementów interfejsu użytkownika. Należą one do
+rodziny Open Source (ang. Otwarte Oprogramowanie) -- ich kod źródłowy jest dostępny publicznie,
+można go wykorzystywać~i~modyfikować~w~swoich projektach, zgodnie~z~opublikowaną licencją.

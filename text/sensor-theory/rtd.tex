@@ -1,0 +1,49 @@
+W sensorach termorezystancyjnych metalowych, do których należy RTD, wykorzystywane jest zjawisko
+zmiany rezystacji metalu~w~funkcji temperatury. Do najczęściej stosowanych należą metale: platyna
+(Pt), nikiel (Ni), miedź (Cu), których charakterystyki~i~właściwości metrologiczne są
+ujęte~w~odpowiednich normach \cite{rtd_norm}.
+
+Oznaczanie czujników temperatury jest związane~z~rodzajem zastosowanego metalu oraz wartością
+rezystancji czujnika $R_0$~w~temperaturze odniesienia $T_0$, którą przyjmuję się jako 0\degC
+\cite{gawedzki2010}. Zależność rezystancji od temperatury standardowo jest nieliniowa~i~wyznaczana
+jest eksperymentalnie, jednakże można wykorzystać aproksymację funkcją liniową:
+
+\begin{equation}
+  R_T=R_0(1+\alpha\cdot\Delta T)
+\end{equation}
+
+\begin{eqparams}
+  R_0 & rezystancja czujnika~w~temperaturze odniesienia, \\
+  \alpha & współczynnik temperaturowy metalu, \\
+  \Delta T & różnica temperatur pomiędzy otoczeniem sensora~a~referencyjną.
+\end{eqparams}
+
+\noindent Współczynnik temperaturowy definuje się jako względna zmiana rezystancji spowodowana
+zmianą temperatury, co przedstawia równanie \ref{eq:alpha1}, natomiast~w~przypadku liniowej
+aproksymacji zależność przedstawia równanie \ref{eq:alpha2} \cite{gawedzki2010}.~W~tabeli
+\ref{tab:temp_alpha} przedstawiono wartości współczynnika dla wybranych metali.
+
+\begin{equation}\label{eq:alpha1}
+  \alpha=\frac{dR_T}{R_T\cdot dT}
+\end{equation}
+
+\begin{equation}\label{eq:alpha2}
+  \alpha=\frac{R_T-R_0}{R_0\cdot(T-T_0)}
+\end{equation}
+
+\begin{table}[!htbp]
+  \centering
+  \caption{\label{tab:temp_alpha}Wartości współczynnika temperaturowego dla wybranych metali}
+  \begin{tabular}{cc}
+    \toprule
+    Metal            & Współczynnik temperaturowy $\alpha$ \\
+    \midrule
+    Platyna          & 0.003729                            \\
+    Miedź            & 0.004041                            \\
+    Nikiel           & 0.00617                             \\
+    Wolfram          & 0.0045                              \\
+    Konstanan (CuNi) & -0.000074                           \\
+    Monel (NiCu)     & 0.0011                              \\
+    \bottomrule
+  \end{tabular}
+\end{table}

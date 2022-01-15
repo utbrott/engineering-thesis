@@ -1,0 +1,17 @@
+Makefile
+*.acn
+*.app
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.glo
+*.ist
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.run.xml
+*.slo
+*.toc

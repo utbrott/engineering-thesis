@@ -1,0 +1,61 @@
+% Opisanie tego jak zbudowane jest UI ogólnie, nawiązanie, że opisane zostaną tylko te najważniejsze
+Całość kodu źródłowego aplikacji, która odpowiedzialna jest za renderowanie interfejsu użytkownika
+wykorzystuje paradygmat programowania komponentowego -- pozwala na projektowanie, implementację oraz
+testowanie elementów aplikacji niezależnie od siebie. Dodatkowo, jeżeli zaistnieje taka potrzeba,
+część kodu źródłowego może być stworzona~w~zupełnie innym języku programowania, a~następnie
+dołączona do aplikacji, gdzie będzie idealnie współpracować~z~resztą obecnych już komponentów
+\cite{component-programming}. Interfejs użytkownika~w~aplikacji jest~w~języku angielskim. Został
+stworzony~w~taki sposób, aby finalna aplikacja mogła być wykorzystywana przez użytkowników nie
+tylko~z~Polski.
+
+% Opis poszególnych, ważnych składowych UI ze snippetami
+\subsection{Elementy interfejsu}
+Głównymi elementami interfejsu są komponenty odpowiedzialne za:
+\begin{itemize}
+  \item[--] konfigurację sensora dla danego laboratorium,
+  \item[--] wyświetlanie zadań do wykonania oraz wygenerowanych danych,
+  \item[--] przyjmowanie oraz weryfikowanie odpowiedzi wpisywanych przez użytkownika,
+  \item[--] prezentowanie wzorów oraz danych niezbędnych do obliczeń,
+  \item[--] wyświetlanie wygenerowanego wykresu.
+\end{itemize}
+Powyższe elementy przedstawione zostały na rysunkach \ref{img:config-tasks},
+\ref{img:generated-graph}, \ref{img:theory}.
+
+\begingroup
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.65\textwidth]{app-ui/config-tasks}
+  \caption{\label{img:config-tasks}Komponenty do konfiguracji, wyświetlania zadań~i~przyjmowania
+    odpowiedzi.}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.65\textwidth]{app-ui/theory}
+  \caption{\label{img:theory}Komponent prezentujący wzory oraz dane.}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.65\textwidth]{app-ui/generated-graph}
+  \caption{\label{img:generated-graph}Komponent wyświetlający wygenerowany wykres.}
+\end{figure}
+\endgroup
+
+\subsubsection{Komponent do konfiguracji sensorów}
+\input{text/app/ui-parts/sensor-config}
+
+\subsubsection{Komponent wyświetlający zadania oraz wygenerowany zestaw danych}
+\input{text/app/ui-parts/tasks}
+
+
+\subsubsection{Komponent odpowiedzialny za przyjmowanie i weryfikację odpowiedzi}
+\input{text/app/ui-parts/answers}
+
+
+\subsubsection{Komponent prezentujący wzory oraz dane niezbędne do obliczeń}
+\input{text/app/ui-parts/theory}
+
+
+\subsubsection{Komponent wyświetlający wygenerowany wykres}
+\input{text/app/ui-parts/graph}
