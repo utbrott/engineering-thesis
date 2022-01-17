@@ -1,17 +1,22 @@
-Komponent zbudowany jest wykorzystując \texttt{Form Control} z biblioteki Chakra UI. Jego zadaniem jest kontrola
-formularza, który przyjmuje odpowiedzi użytkownika, jednakże wartości oraz weryfikacja ich nie są zarządzane lokalnie,
-w komponencie. Zajmują się tym zewnętrzne funkcje przekazywane poprzez artybuty, znane jako \texttt{props} w
-React \cite{react-docs}, które pozwalają komponentowi na odczytywanie obecnej wartości oraz zmianę ich. Lista atrybutów
-przedstawiona została na rysunku \ref{lst:form-props}, natomiast wykorzystanie ich w komponencie przedstawiają
-rysunki \ref{lst:form-part1}, \ref{lst:form-part2}, \ref{lst:form-part3}.
+Komponent zbudowany jest wykorzystując \texttt{Form Control}~z~biblioteki Chakra UI. Jego zadaniem
+jest kontrola formularza, który przyjmuje odpowiedzi użytkownika, jednakże wartości oraz weryfikacja
+ich nie są zarządzane lokalnie,~w~komponencie. Zajmują się tym zewnętrzne funkcje przekazywane
+poprzez artybuty, znane jako \texttt {props}~w~React \cite{react-docs}, które pozwalają komponentowi
+na odczytywanie obecnej wartości oraz zmianę ich. Ponieważ do implementacji aplikacji wykorzystany
+został język TypeScript każdemu artybutowi należało przypisać typ zmiennej lub funkcji, które mogą
+być przez niego przekazane do komponentu. Lista atrybutów przedstawiona została~w~listingu
+\ref{lst:form-props}, natomiast wykorzystanie ich~w~komponencie przedstawiają listingi
+\ref{lst:form-part1}, \ref{lst:form-part2}, \ref{lst:form-part3}. Pełna implementacja komponentu --
+jakie funkcje przekazywane są~z~zewnątrz -- przedstawiona została~w~rozdziale \ref{sect:laboratory}.
 
-\addimage{0.9}{code/form-props}{\label{lst:form-props}Artybuty, \texttt{props}, komponentu}
+\addsnippet{0.9}{code/form-props}{\label{lst:form-props}Artybuty, \texttt{props}, komponentu}
 
-\addimage{0.9}{code/form-part1}{\label{lst:form-part1}Wykorzystanie \texttt{props} w komponencie -- kontrola formularza,
- tytuł pola}
+\addsnippet{0.9}{code/form-part1}{\label{lst:form-part1}Wykorzystanie \texttt{props}~w~komponencie --
+  kontrola formularza, tytuł pola}
 
-\addimage{0.9}{code/form-part2}{\label{lst:form-part2}Wykorzystanie \texttt{props} w komponencie -- zarządzanie polem
- formularza}
+\addsnippet{0.9}{code/form-part2}{\label{lst:form-part2}Wykorzystanie \texttt{props}~w~komponencie --
+  zarządzanie polem formularza}
 
-\addimage{0.9}{code/form-part3}{\label{lst:form-part3}Wykorzystanie \texttt{props} w komponencie -- przycisk do
- potwierdzania wpisywanej wartościq}
+\addsnippet{0.9}{code/form-part3}{\label{lst:form-part3}Wykorzystanie \texttt{props}~w~komponencie --
+  przycisk do potwierdzania wpisywanej wartości}
+

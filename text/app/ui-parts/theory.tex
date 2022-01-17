@@ -1,1 +1,26 @@
-\lipsum[1]
+Część teoretyczna do każdego laboratorium prezentowana jest~w~postaci okna dialogowego. Taka
+implementacja została wykorzystana, aby użytkownik nie musiał zamykać strony~z~wykonywanym
+ćwiczeniem (co skutkowałoby utratą postępów, ponieważ aplikacja nie posiada bazy danych). Zawartość
+okna dialogowego konfigurowana jest przez dwa dodatkowe komponenty -- \texttt{Formula, Table},
+których zadaniem jest generowanie odpowiednio listy wzorów oraz tabel~z~danymi na podstawie plików
+konfiguracyjnych. Kod źródłowy odpowiadający za generowanie listy wzorów oraz tabel przedstawiony
+jest~w~listingach \ref{lst:theory-formula} oraz \ref{lst:theory-table}, natomiast~w~listingach
+\ref{lst:formula-config}, \ref{lst:table-config} przedstawione zostały fragmenty plików, które
+zawierają informacje jakie wzory oraz tabele mają zostać wygenerowane przez komponenty.
+
+\addsnippet{0.9}{code/theory-formula}{\label{lst:theory-formula}Kod komponentu odpowiedzialnego za
+  generowanie listy wzorów}
+
+\addsnippet{0.9}{code/theory-table}{\label{lst:theory-table}Komponent generujący tabele~z~danymi do
+  ćwiczenia~w~oknie dialogowym}
+
+\addsnippet{0.9}{code/formula-config}{\label{lst:formula-config}Fragment pliku~z~informacjami o
+  wzorach do wyświetlenia~w~oknie dialogowym}
+
+\addsnippet{0.9}{code/table-config}{\label{lst:table-config}Fragment pliku konfiguracyjnego do
+  komponentu~z~tabelami}
+
+Ponieważ pliki konfiguracyjne mają format tablicy~z~obiektami, to generowanie kolejnych wzorów oraz
+wierszy tabeli wykonywane jest przez mapowanie przez kolejne wartości. Odpowiednie
+miejsca~w~kodzie, gdzie wstawione są nazwy zmiennych odczytujących klucze~z~konfiguracji
+uzupełniane są pobranymi informacjami.

@@ -1,1 +1,14 @@
-\lipsum[1]
+Generowanie wykresów~w~aplikacji wykorzystuje do tego bibliotekę \textit{Recharts}. Udostępnia ona
+komponenty \texttt{LineChart, CartesianGrid, XAxis, YAxis, Line}, które połączone pozwalają na
+wyświetlanie wykresów. Dane, które mają być wykreślone podawane są poprzez zewnętrzne atrybuty,
+ponieważ generowane one są~w~komponencie danego laboratorium (implementacja przedstawiona
+została~w~rozdziale \ref{sect:laboratory}).
+
+Dodatkowo wykorzystana została biblioteka \textit{recharts-to-png}, która pozwala na zapisywanie
+wykresów jako obrazów~w~formacie PNG, aby można było je~w~późniejszym czasie wykorzystać,
+przykładowo pisząc sprawozdanie~z~wykonanego ćwiczenia laboratoryjnego.
+
+Aplikacja posiada dwa warianty komponetu do wyświetlania wykresu -- \texttt{SingleLineChart} oraz
+\texttt{MultiLineChart}, wykorzystywane odpowiednio, tam gdzie potrzeba wykresu, który posiada tylko
+jedną linię lub który posiada wiele linii (w przypadku aplikacji jest to laboratorium~z~sensorami
+temperatury, gdzie wykresy do charakterystyk dynamicznych posiadają trzy linie)

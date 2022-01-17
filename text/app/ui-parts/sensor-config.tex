@@ -1,19 +1,19 @@
 Dla każdego sensora możliwa jest zmiana jego parametrów. Do implementacji wykorzystana została
 metoda dynamicznego mapowania pól~w~całym komponencie na podstawie pliku konfiguracyjnego,
-odpowiadający za to kod przedstawiony został na rysunku \ref{lst:config-field-map}. Dane pole
+odpowiadający za to kod przedstawiony został w listingu \ref{lst:config-field-map}. Dane pole
 posiada dwa różne warianty do wyboru -- wybór~z~listy (wykorzystywany~w~przypadkach, gdy dany
 parametr ma więcej opcji do wyboru) lub przycisk typu radio (dla przypadków, gdzie opcji do wyboru
-jest nie więcej jak trzy). Na rysunku \ref{lst:config-field} przedstawiony został kod, który
+jest nie więcej jak trzy). W listingu \ref{lst:config-field} przedstawiony został kod, który
 renderuje pojedyncze pole na podstawie informacji zawartych~w~pliku konfiguracyjnego, którego
-fragment przedstawiony został na rysunku \ref{lst:config-field-data}.
+fragment przedstawiony został w listingu \ref{lst:config-field-data}.
 
-\addimage{0.9}{code/config-field-map}{\label{lst:config-field-map}Funkcja dynamicznie mapująca pola
+\addsnippet{0.9}{code/config-field-map}{\label{lst:config-field-map}Funkcja dynamicznie mapująca pola
   na podstawie pliku konfiguracyjnego}
 
-\addimage{0.9}{code/config-field}{\label{lst:config-field}Kod komponentu pojedynczego pola
+\addsnippet{0.9}{code/config-field}{\label{lst:config-field}Kod komponentu pojedynczego pola
   konfiguracyjnego}
 
-\addimage{0.9}{code/config-field-data}{\label{lst:config-field-data}Fragment pliku zawierającego
+\addsnippet{0.9}{code/config-field-data}{\label{lst:config-field-data}Fragment pliku zawierającego
   dane do generowania pól konfiguracyjnych}
 
 Plik konfiguracyjny ma formę tablicy zawierającej obiekty, które definują dane pole. Każdy obiekt

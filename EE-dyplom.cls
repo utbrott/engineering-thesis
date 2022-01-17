@@ -294,6 +294,8 @@
         {caption}
 \RequirePackage{subcaption}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ustawienia typografii
@@ -781,6 +783,14 @@
         \centering
         \includegraphics[width=#1\textwidth]{#2}
         \caption{#3}
+      \end{figure}
+}
+
+\newcommand{\addsnippet}[3]{
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+        \captionof{lstlisting}{#3}
       \end{figure}
 }
 
