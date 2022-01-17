@@ -772,7 +772,18 @@
   {\noindent #1\hfill\newline
   \begin{tabular}[h]{>{$\quad}l<{$} @{${}$ -- {}} l}}
   {\end{tabular}\\[\belowdisplayskip]}
+\RequirePackage{tablefootnote}
 
-  
-  \RequirePackage{tablefootnote}
 \newcommand{\degC}{\textrm{$^\circ$C}\space}
+
+\newcommand{\addimage}[3]{
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+        \caption{#3}
+      \end{figure}
+}
+
+\newcommand{\colortt}[1]{
+  \textcolor{EEBlueDark}{\texttt{#1}}
+}
