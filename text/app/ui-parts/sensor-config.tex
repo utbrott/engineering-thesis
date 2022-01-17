@@ -1,13 +1,13 @@
 Dla każdego sensora możliwa jest zmiana jego parametrów. Do implementacji wykorzystana została
-metoda dynamicznego mapowania pól~w~całym komponencie na podstawie pliku konfiguracyjnego,
-odpowiadający za to kod przedstawiony został w listingu \ref{lst:config-field-map}. Dane pole
+metoda mapowania pól~w~całym komponencie na podstawie pliku konfiguracyjnego.
+Odpowiadający za to kod przedstawiony został w listingu \ref{lst:config-field-map}. Dane pole
 posiada dwa różne warianty do wyboru -- wybór~z~listy (wykorzystywany~w~przypadkach, gdy dany
 parametr ma więcej opcji do wyboru) lub przycisk typu radio (dla przypadków, gdzie opcji do wyboru
-jest nie więcej jak trzy). W listingu \ref{lst:config-field} przedstawiony został kod, który
-renderuje pojedyncze pole na podstawie informacji zawartych~w~pliku konfiguracyjnego, którego
+jest nie więcej niż trzy). W listingu \ref{lst:config-field} przedstawiony został kod, który
+renderuje pojedyncze pole na podstawie informacji zawartych~w~pliku konfiguracyjnym, którego
 fragment przedstawiony został w listingu \ref{lst:config-field-data}.
 
-\addsnippet{0.9}{code/config-field-map}{\label{lst:config-field-map}Funkcja dynamicznie mapująca pola
+\addsnippet{0.9}{code/config-field-map}{\label{lst:config-field-map}Funkcja generująca pola
   na podstawie pliku konfiguracyjnego}
 
 \addsnippet{0.9}{code/config-field}{\label{lst:config-field}Kod komponentu pojedynczego pola
@@ -20,8 +20,7 @@ Plik konfiguracyjny ma formę tablicy zawierającej obiekty, które definują da
 składa się~z~par klucz-wartość. Klucz \colortt{sensor} określa do jakiego laboratorium przynależą
 definiowane wartości, \colortt{id} wykorzystywany jest przy manipulowaniu stanem, którego zadaniem
 jest przechowywanie informacji~o~obecnej konfiguracji sensora, natomiast \colortt{type} pozwala na
-zdefiniowanie jaki wariant pola konfiguracyjnego ma zostać wyświetlony. Zarządzanie stanem oraz jak
-zostało to rozwiązane~w~aplikacji opisane zostało~w~rozdziale \ref{sect:context}. Pozostałe klucze
--- \colortt{label, options, optionLabels, defaultValue} wykorzystywane są do określenia
-wyświetlanego tytułu pola konfiguracyjnego, opcji dostępnych do wyboru oraz domyślnie
-wybranej opcji.
+zdefiniowanie jaki wariant pola ma zostać wyświetlony. Zarządzanie stanem oraz jak zostało to
+rozwiązane~w~aplikacji opisane zostało~w~rozdziale \ref{sect:context}. Pozostałe klucze --
+\colortt{label, options, optionLabels, defaultValue} wykorzystywane są do określenia wyświetlanego
+tytułu pola, opcji dostępnych do wyboru oraz domyślnie wybranej opcji.

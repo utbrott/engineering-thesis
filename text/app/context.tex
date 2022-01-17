@@ -1,3 +1,40 @@
-% Opisać jak działa przechowywanie danych w aplikacji, że nie istnieje tutaj baza danych, a
-% wszystko jest przechowywane w stanach i zarządzane z wykorzystaniem React Context
-\lipsum[1]
+% Opisać jak działa przechowywanie danych~w~aplikacji, że nie istnieje tutaj baza danych, a
+% wszystko jest przechowywane~w~stanach~i~zarządzane~z~wykorzystaniem React Context
+Do zarządzania stanem komponentów wykorzystano React Context -- metodę pozwalającą na przekazywanie
+danych~w~drzewie komponentów bez wykorzystywania artybutów (props) na każdym poziomie
+\cite{react-docs}. Standardowa metoda, wykorzystująca zależność Rodzic-Dziecko (ang. \textit{Parent
+  to child}) może być uciążliwa, ponieważ dane komponenty tworzące laboratorium składają się
+dodatkowo~z~wielu mniejszych komponentów. Zastosowanie tej metody wymagałoby dodawania artybutów do
+każdego~z~nich, tylko~w~celu przekazania danych~z~komponentu laboratorium do najniżej
+położonego~w~drzewie elementu, gdzie dane te są wykorzystywane. Schematy blokowe przedstawiające
+standardową metodę przekazywania danych oraz metodą korzystającą~z~Context przedstawiają odpowiednio
+rysunki \ref{img:data-props} oraz \ref{img:data-context}.
+
+\addimage{0.9}{code/data-props}{\label{img:data-props}Metoda tradycyjna przekazywania danych -
+  atrybuty (props)}
+
+\addimage{0.9}{code/data-context}{\label{img:data-context}Metoda wykorzystująca Context}
+
+Jak widać na przedstawionych schematach, metoda wykorzystująca Context jest dużo bardziej optymalna.
+Pozwala ona na pominięcie przekazywania danych, właściwości lub funkcji przez całe drzewo
+komponentów. Zamiast tego wartość ta przekazywana jest bezpośrednio do komponentu, który~z~niej
+korzysta, nawet jeżeli znajduje się~w~zupełnie innej części drzewa.
+
+W~aplikacji Context używany jest~w~celu przekazywania:
+\begin{itemize}
+  \item[--] informacji~o~obecnie wybranej konfiguracji sensora dla danego laboratorium,
+  \item[--] przekazywania funkcji do aktualizacji stanu zarządzającego konfiguracją sensora,
+  \item[--] stanu czy konfiguracja jest zapisana (co pozwala na odblokowanie zadań),
+  \item[--] wartości~z~pliku konfiguracyjnego~z~treściami zadań
+  \item[--] obiektów zawierających tablice~z~danymi do generowania wartości
+  \item[--] obiektów~z~tablicami danych do sprawdzania poprawności wpisywanej przez użytkownika
+        odpowiedzi
+\end{itemize}
+Powyższe elementy przedstawione zostały~w~listingach \ref{lst:context-sensor},
+\ref{lst:context-functions}.
+
+\addsnippet{0.9}{code/context-sensor}{\label{lst:context-sensor}Przykładowa fragment Contextu z
+  informacjami dla konkretnego laboratorium}
+
+\addsnippet{0.9}{code/context-functions}{\label{lst:context-functions}Funkcje przekazywane globalnie
+  przez Context~w~drzewie komponentów}

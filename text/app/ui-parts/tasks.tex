@@ -1,5 +1,5 @@
-Aplikacja została zaprojektowana~w~taki sposób, że do momentu zapisania konfiguracji niemożliwe jest
-zobaczenie zadań do wykonania oraz przejście do wykonywania ich. Na rysunku \ref{img:tasks-alert}
+Aplikacja została zaprojektowana~w~taki sposób, że do momentu zapisania konfiguracji zadania nie są
+wyświetlane oraz nie można przejść do ich wykonywania. Na rysunku \ref{img:tasks-alert}
 przedstawione zostało rozwiązanie zastosowane~w~aplikacji -- ostrzeżenie informujące~o~tym, że
 należy zapisać konfigurację, aby wyświetlić zadania. Listing \ref{lst:tasks-alert-code} przedstawia
 natomiast implementację takiego ostrzeżenia~w~kodzie źródłowym aplikacji.
@@ -11,10 +11,10 @@ natomiast implementację takiego ostrzeżenia~w~kodzie źródłowym aplikacji.
   kodzie.}
 
 Do wyświetlania dodanych zadań wykorzystano metodę identyczną jak~w~przypadku komponentu
-konfigurującego sensory -- na podstawie dynamicznego mapowania tablicy,~w~tym przypadku przypisanej
+konfigurującego sensory tj. na podstawie mapowania tablicy,~w~tym przypadku przypisanej
 do każdego~z~laboratoriów, zawierającej obiekty~z~polami klucz-wartość. Każdy obiekt posiada
 informację o \colortt{taskId} (numerze), \colortt {content} (treści) zadania,~a~także flagę
-\colortt{hasData} -- informuje ona kod renderujący komponent~o~tym, czy należy wyświetlić dodatkową
+\colortt{hasData}, która informuje kod renderujący komponent~o~tym, czy należy wyświetlić dodatkową
 linię pod treścią, która zostanie uzupełniona wygenerowanymi danymi. Jedną~z~tablic przechowującą
 informację do wyświetlania zadań przedstawia listing \ref{lst:task-prompts-config}, natomiast
 implementację komponentu, którego zadaniem jest wyświetlanie zadań na podstawie tych informacji

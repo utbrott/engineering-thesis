@@ -1,14 +1,19 @@
 Generowanie wykresów~w~aplikacji wykorzystuje do tego bibliotekę \textit{Recharts}. Udostępnia ona
 komponenty \texttt{LineChart, CartesianGrid, XAxis, YAxis, Line}, które połączone pozwalają na
 wyświetlanie wykresów. Dane, które mają być wykreślone podawane są poprzez zewnętrzne atrybuty,
-ponieważ generowane one są~w~komponencie danego laboratorium (implementacja przedstawiona
+ponieważ generowane są~w~komponencie danego laboratorium (implementacja przedstawiona
 została~w~rozdziale \ref{sect:laboratory}).
 
 Dodatkowo wykorzystana została biblioteka \textit{recharts-to-png}, która pozwala na zapisywanie
 wykresów jako obrazów~w~formacie PNG, aby można było je~w~późniejszym czasie wykorzystać,
-przykładowo pisząc sprawozdanie~z~wykonanego ćwiczenia laboratoryjnego.
+przykładowo pisząc sprawozdanie~z~wykonanego ćwiczenia laboratoryjnego. Implementacja tej
+funkcjonalności przedstawiona została~w~listingu \ref{lst:chart-download}.
+
+\addsnippet{0.9}{code/chart-download}{\label{lst:chart-download}Implementacja funkcjonalności
+  zapisywania wykresów jako obrazy}
 
 Aplikacja posiada dwa warianty komponetu do wyświetlania wykresu -- \texttt{SingleLineChart} oraz
-\texttt{MultiLineChart}, wykorzystywane odpowiednio, tam gdzie potrzeba wykresu, który posiada tylko
-jedną linię lub który posiada wiele linii (w przypadku aplikacji jest to laboratorium~z~sensorami
-temperatury, gdzie wykresy do charakterystyk dynamicznych posiadają trzy linie)
+\texttt{MultiLineChart}. Wykorzystywane są odpowiednio, tam gdzie potrzebny jest wykres, który
+posiada tylko jedną linię lub który posiada wiele linii (w przypadku aplikacji jest to
+laboratorium~z~sensorami temperatury, gdzie wykresy do charakterystyk dynamicznych posiadają trzy
+linie).
