@@ -1,1 +1,50 @@
-\section{Poprawność wykonywanych przez aplikację symulacji}
+Testy tej części aplikacji składały się~z~weryfikacji czy zaimplementowane~w~aplikacji wzory dla
+sensorów pomiarowych zwracają poprawne wartości. Wykonane zostały obliczenia na podstawie teorii,
+których wyniki zostały porównane~z~tymi pojawiającymi się~w~aplikacji.~W~tym celu do kodu źródłowego
+dodana została specjalna funkcja, która wyświetla wielkości wykorzystywane przez aplikację do
+weryfikacji odpowiedzi użytkownika. Wartość ta wyświetla się tylko~w~konsoli przeglądarki, gdy
+aplikacja uruchomiona jest na serwerze deweloperskim -- nie ma do niej dostępu~w~wersji produkcyjnej
+aplikacji. Dodatkowo przeprowadzone zostały testy czy generowane przez aplikacje produkują
+prawidłowe wartości do generowania wykresów oraz czy wykresy te są wykreślone prawidłowo.
+
+Na przykładzie przetwornika LVDT (przedstawionego~w~rozdziale
+\ref{sect:theory-lvdt}) wykonane zostały obliczenia dla takiej samej konfiguracji jak wybrana
+została~w~aplikacji:
+\begin{itemize}
+  \item [--]  liczba zwojów~w~uzwojeniu pierwotnym $N_p$ = 1000,
+  \item [--]  napięcie wejściowe $U_{wej}$ = 5V,
+  \item [--]  częstoliwość napięcia zasilania układu przetwornika $f$ = 1000Hz.
+\end{itemize}
+Pozostałe wartości zaczerpnięte zostały~z~teorii dostępnej~w~aplikacji. Po zapisaniu
+konfiguracji~w~aplikacji zestaw otrzymanych danych (wartości przemieszczenia $x$) to: 0, 6, 5, 13,
+15mm. Podstawiając odpowiednie wartości do wzoru otrzymane zostały następujące wartości:
+
+\begin{equation*}
+  U_{wy} =1000\cdot \frac{5}{10\cdot 10^3}\cdot\bigg(16\pi^2\cdot 0.5\cdot 1000^2\cdot
+  10^{-7}\cdot 20\cdot 10^{-3}\cdot\frac{0}{3\cdot 10\cdot 10^{-3}}\cdot\log{(2)}\bigg)
+  \bigg(1-\frac{0^2}{2\cdot (20\cdot 10^{-3})^2}\bigg)
+\end{equation*}
+\begin{equation*}
+  \therefore\quad U_{wy} = 0
+\end{equation*}
+
+Dla pozostałych wartości przemieszczenia rdzenia:
+\begin{align*}
+  U_{wy} & =4.5398\approxeq 4.54\quad\text{dla}\quad x=6  \\
+  U_{wy} & =3.8376\approxeq 3.84\quad\text{dla}\quad x=5  \\
+  U_{wy} & =8.1238\approxeq 8.12\quad\text{dla}\quad x=13 \\
+  U_{wy} & =8.5418\approxeq 8.54\quad\text{dla}\quad x=15
+\end{align*}
+
+Porównując otrzymane wielkości~z~wynikami, które funkcja drukuje~w~konsoli deweloperskiej, co
+przedstawione zostało na rysunku \ref{img:calculations-console}, można stwierdzić, że implementacja
+wzorów~w~aplikacji jest prawidłowa. Natomiast jeżeli porówna się wygenerowany przez aplikację wykres
+dla sensora LVDT, który przedstawiony jest na rysunku \ref{img:app-graph}~z~wykresem teoretycznym,
+przedstawionym na rysunku \ref{img:transfer-lvdt}, możliwe jest stwierdzenie, że wykres jest
+prawidłowy.
+
+\addimage{0.6}{code/calculations-console}{\label{img:calculations-console}Wydruk~z~konsoli
+  pokazujący generowane przez aplikację wartości}
+
+\addimage{0.7}{app-ui/app-graph}{\label{img:app-graph}Wygenerowany przez aplikację wykres zależności
+  dla sensora LVDT}

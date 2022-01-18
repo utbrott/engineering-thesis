@@ -1,0 +1,49 @@
+% Opisanie jak zbudowane jest jedno~z~laboratorium
+Na kod źródłowy laboratorium składają się wywołania opisanych~w~poprzednich rozdziałach komponentów
+oraz specjalnych funkcji, znanych~w~React jako \texttt{hooks}. Budowanie własnych funkcji typu
+\texttt{hook} pozwala na ekstrakcję logiki, która byłaby wielokrotnie powtarzana~w~różnych miejscach
+aplikacji \cite{react-docs}. Przykładem może być odczytywanie wartości~z~komponentu przyjmującego
+odpowiedzi użytkownika, której implementacja przedstawiona została~w~listingu
+\ref{lst:example-hook}.
+
+\addsnippet{code/example-hook}{\label{lst:example-hook}Implementacja przykładowej funkcji typu
+  \texttt{hook}}
+
+Zaprezentowany własny hook wykorzystuje funkcję \texttt{useReducer} -- hook udostępniony przez
+framework React. Pozwala on na zarządzanie złożonymi stanami, które składają się~z~podwartości lub
+gdy jeden ze stanów zależny jest od innego obecnego~w~tej samej funkcji lub komponencie. Na
+podstawie zmiennych wejściowych (w tym przypadku tablicy wartości do porównywania tego co jest
+wpisywane~w~pole~z~wartością poprawną) zwracane są zaimplementowane flagi \colortt{isFieldEmpty,
+  isFieldInvalid}. Ich zadaniem jest przechowywanie informacji~o~tym, czy pole jest puste oraz jeżeli
+pole nie jest puste czy wpisana wartość jest zgodna~z~tą~z~porównania. Dodatkowo hook posiada dwie
+funkcje \colortt{handleChange, handleReset}, których zadaniem jest odpowiednio aktualizowanie
+wartości~w~pamięci aplikacji do najnowszej~w~polu oraz czyszczenie pola przy wywołaniu drugiej
+funkcji.
+
+Cały komponent zarządza wartościami dla danego laboratorium przechowywanymi~w~Context~i~przekazuje
+odpowiednie dane do komponentów, które takich informacji potrzebują (przykładowo przekazanie
+informacji~o~wybranej konfiguracji~z~komponentu, który się tym zajmuje do komponentu, który na ich
+podstawie generuje dane do zadań). Dodatkowo zajmuje się uzupełnianiem informacji, które mają być
+wyświetlone użytkownikowi~w~oknie dialogowym~z~teorią do ćwiczenia (na podstawie wczytanych plików
+konfiguracyjnych). Przedstawia to listing \ref{lst:modal-content}.
+
+\addsnippet{code/modal-content}{\label{lst:modal-content}Fragment kodu zajmujący się
+  populowaniem okna dialogowego teorii odpowiednimi wzorami~i~tabelami na podstawie plików
+  konfiguracyjnych}
+
+Komponent każdego laboratorium wykorzystuje zaimplementowane hooki -- \colortt{useFormInput,
+  useFormValidation, useCompleteTask, useSingleLineChartData} do zarządzania stanem, który
+wykorzystywany jest przez odpowiednie komponenty budujące interfejs użytkownika.
+
+Poniżej przedstawione są zadania, które wykonują zaimplementowane hooki:
+\begin{itemize}
+  \item [--] \colortt{useFormInput} przyjmuje wartości wpisywane~w~pole odpowiedzi do zadania, w
+        razie potrzeby ustawia odpowiednie flagi związane~z~porównaniem do poprawnej wartości,
+  \item [--] \colortt{useFormValidation} na podstawie flag~z~powyższej funkcji aktualizuje liczbę
+        poprawnie wpisanych odpowiedzi lub ustawia flagę~o~błędzie~i~wiadomość~z~nią związaną pod
+        polem na odpowiedź,
+  \item [--] \colortt{useCompleteTask} sprawdza czy liczba poprawnych odpowiedzi jest wystarczająca
+        do uznania zadań jako ukończone~i~pozwala aplikacji na wyświetlenie wykresu,
+  \item [--] \colortt{useSingleLineChartData} tworzy tablicę danych, która wykorzystywana jest do
+        wykreślenia wykresu.
+\end{itemize}

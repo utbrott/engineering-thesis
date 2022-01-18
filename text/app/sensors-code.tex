@@ -1,2 +1,36 @@
-% Opisanie tylko wybranych funkcji jak one działają i pokazanie tego, że są po odzwiercidleniem
-% teorii w formie kodu
+% Opisanie tylko wybranych funkcji jak one działają~i~pokazanie tego, że są po odzwiercidleniem
+% teorii~w~formie kodu
+Aplikacja korzysta~z~teorii sensorów pomiarowych (przedstawionej~w~rozdziale
+\ref{sect:sensor-theory}) do generowania danych do zadań oraz weryfikowania poprawności odpowiedzi
+wpisywanych przez użytkownika. Każde laboratorium posiada zestaw funkcji, które przekształcają wzory
+teoretyczne do postaci kodu źródłowego.
+
+Na funkcję składają się:
+\begin{itemize}
+  \item[--] zmienne wejściowe
+  \item[--] wartości stałe dla danego wzoru teoretycznego,
+  \item[--] wzór, który jest podzielony na mniejsze fragmenty,
+  \item[--] połączenie części do postaci pełnego wzoru,
+  \item[--] zaokrąglenie otrzymanej~z~funkcji wartości~i~zwrócenie jej.
+\end{itemize}
+Przykładowa funkcja, składająca się~z~powyższych elementów, przedstawiona została~w~listingu
+\ref{lst:sensor-formula}.
+
+\addsnippet{code/sensor-formula}{\label{lst:sensor-formula}Implementacja wzoru dla przetwornika
+  LVDT~w~kodzie aplikacji}
+
+Zmienne wejściowe, które przyjmuje dana funkcja pobierane są~z~Context, ponieważ tam przechowywane
+są informacje~o~obecnie wybranej konfiguracji sensora. Wartości stałe dla każdego wzoru znajdują się
+bezpośrednio~w~kodzie danej funkcji. Sam wzór, jeżeli składa się~z~wielu części, dzielony jest na
+mniejsze dodatkowe funkcje lub stałe -- zapewnia to znacznie lepszą czytelność kodu oraz pewność, że
+dana funkcja pełni tylko jedną rolę. Wyznaczona wartość jest~w~fazie końcowej jest zaokrąglana do
+setnych części,~w~celu łatwiejszego operowania nią podczas weryfikacji odpowiedzi użytkownika.
+Zaokrąglenie zostało wykorzystane, ponieważ znacznie łatwiej poprosić użytkownika~o~wyznaczenie
+wartości~w~takiej postaci, niż~w~formacie pełnej wartości zmiennoprzecinkowej -- często do 15 miejsc
+po przecinku.
+
+Wykorzystanie własnych funkcji zaimplementowanych bezpośrednio~w~kodzie aplikacji daje pewność, że
+wykorzystywane wzory są prawidłowym odzwierciedleniem teorii. Dodatkowo nie jest wymagane
+korzystanie~z~zewnętrznych bibliotek oraz generowanie wartości poza aplikacją (implementacja lokalna
+pracuje szybciej, nawet~w~przypadku złożonych obliczeń w stosunku do pobierania danych~z~serwerów,
+co jest zależne od jakości połączenia~z~internetem jakim dysponuje użytkownik).

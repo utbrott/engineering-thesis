@@ -786,11 +786,11 @@
       \end{figure}
 }
 
-\newcommand{\addsnippet}[3]{
-    \begin{figure}[!htbp]
+\newcommand{\addsnippet}[2]{
+    \begin{figure}[!htb]
         \centering
-        \includegraphics[width=#1\textwidth]{#2}
-        \captionof{lstlisting}{#3}
+        \includegraphics[width=0.85\textwidth]{#1}
+        \captionof{lstlisting}{#2}
       \end{figure}
 }
 
