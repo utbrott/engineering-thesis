@@ -1,0 +1,33 @@
+Celem pracy było zaprojektowanie oraz zaimplementowanie aplikacji internetowej wspomagającej
+wykonywanie ćwiczeń~w~laboratorium Przetworników pomiarowych.~W~ramach pracy zapoznano się~z~teorią
+sensorów oraz przetworników pomiarowych. Opisany został proces projektowania~i~implementacji
+aplikacji -- wykorzystane biblioteki oraz metody tworzenia kodu źródłowego.
+
+Analiza teorii polegała na przyjrzeniu się stosowanym układom pomiarowym,~w~których używa się
+wybranych do aplikacji sensorów. Zwrócono także uwagę na wzory potrzebne przy wykonywaniu obliczeń.
+Dodatkowo przeanalizowane zostały typowe konfiguracje sensorów stosowane, tak aby
+implementacja~w~narzędziu była jak najbliższa rzeczywistym przetwornikom pomiarowym.
+
+Gotowa aplikacja oferuje możliwość konfigurowania sensorów pomiarowych. Zgodnie~z~założeniami
+dostępne są zadania do wykonania~w~każdym~z~zaimplementowanych laboratoriów. Rozwiązanie posiada
+funkcjonalność weryfikowania wpisywanych przez użytkownika odpowiedzi. Dodatkowo wszystkie
+laboratoria posiadają zestaw generowanych charakterystyk przetwarzania, które użytkownik może
+pobrać~i~zapisać na swoim komputerze~w~celu późniejszego wykorzystania.
+
+Do implementacji wykorzystane zostały biblioteka \textit{React} oraz framework \textit {Next.js},
+które pozwalają na tworzenie złożonych, interaktywnych aplikacji. Do stworzenia interfejsu
+użytkownika wykorzystano bibliotekę \textit{Chakra UI} udostępniającą wiele gotowych
+komponentów,~a~także dwie dodatkowe biblioteki -- \textit{React Latex} do wyświetlania wzorów
+teoretycznych oraz \textit{Recharts} do generowania~i~wykreślania charakterystyk.
+
+Aplikacja posiada interaktywny interfejs użytkownika, który aktualizuje się~w~raz~z~działaniami
+prowadzonymi przez użytkownika aplikacji. Całość interfejsu jest~w~j.~angielskim, co pozwala na
+wykorzystywanie narzędzia nie tylko przez użytkowników~z~Polski. Wszystkie zaimplementowane
+funkcje -- generowanie danych, weryfikacja poprawności wpisywanych odpowiedzi, generowanie wykresów
+działają prawidłowo. Zostało to wykazane na podstawie przeprowadzonych testów.
+
+Kolejnymi etapami rozwoju stworzonego rozwiązania są: poprawienie działania interfejsu użytkownika,
+aby pełna funkcjonalność nie była ograniczona do wąskiego zakresu rozdzielczości ekranów
+komputerów. Dodatkowo planowane jest przeniesienie elementów aplikacji, które zajmują się
+wykonywaniem obliczeń do części ,,zaplecza'' (ang. \textit{backend}), aby były one niezależne od
+przeglądarki internetowej,~z~której użytkownik korzysta do pracy~z~narzędziem.
