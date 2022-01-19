@@ -3,6 +3,57 @@ Na testy poprawności działania interfejsu użytkownika składały się:
   \item [--] sprawdzenie czy do momentu zapisania konfiguracji zablokowany jest widok zadań i
         możliwość wykonywania ich,
   \item [--] analiza czy podczas weryfikowania odpowiedzi aplikacja odrzuca próbę zatwierdzenia
-        pustego pola lub nie poprawnej odpowiedzi,
+        pustego pola lub niepoprawnej odpowiedzi,
   \item [--] weryfikacja czy do momentu ukończenia zadań zablokowane jest wyświetlanie wykresu.
 \end{itemize}
+
+\paragraph{Testy blokady widoczności zadań:} Na rysunku \ref{img:config-tasks}
+przedstawionym~w~rozdziale \ref{sect:ui}, można zaobserwować, że przycisk ,,Apply'' jest aktywny, co
+oznacza, że konfiguracja nie została zapisana. Widać także, że~w~komponentach do wyświetlania zadań
+oraz przyjmowania odpowiedzi wyświetlają się ostrzeżenia~o~braku wybranej konfiguracji. Po
+wciśnięciu przycisku zmienia się wygląd wyświetlanych komponentów, przedstawiona na rysunku
+\ref{img:tasks-unlocked}. Nie jest już możliwa zmiana konfiguracji, widoczna jest treść
+zadań~i~możliwość wpisania odpowiedzi. Dodatkowo odblokowywuje się przycisk do resetowania
+konfiguracji (wyświetlane jest nowe ostrzeżenie, tym razem po najechaniu kursorem na przycisk
+,,Reset''). Na podstawie tego możliwe jest stwierdzenie, że funkcjonalność działa prawidłowo.
+
+\addimage{0.7}{app-ui/tasks-unlocked}{\label{img:tasks-unlocked}Zmiany~w~interfejsie użytkownika po
+  zapisaniu konfiguracji}
+
+\paragraph{Testy poprawnego zachowania pól do wpisywania odpowiedzi:} Założeniem poprawnego
+działania tego komponentu jest wyświetlanie odpowiednich wiadomości~o~błędzie (w przypadku próby
+zatwierdzenia pustej odpowiedzi lub wpisania niepoprawnej wartości).
+
+Rysunki \ref{img:answer-empty}, \ref{img:answer-wrong}, \ref{img:answer-correct} przedstawiają
+odpowiednio reakcje aplikacji na brak wpisanej odpowiedzi, błędną oraz prawidłową
+odpowiedź.~W~przypadku tego testu wartość, którą należało wpisać~w~pole to 8.13. Jak widać na
+załączonych rysunkach wpisanie do pola 9.21 skutkowało wyświetleniem się informacji~o~błędnej
+odpowiedzi. Natomiast zatwierdzając odpowiedź zgodną~z~wyznaczoną przez aplikację wartością zmieniła
+się wartość na liczniku z 0 na 1, który pełni~w~aplikacji dwie funkcje -- informowanie~o~postępie
+wykonywania zadania oraz wyświetlanie czy zostało ono ukończone.
+
+\addimage{0.6}{app-ui/answer-empty}{\label{img:answer-empty}Stan błędu oraz wiadomość~o~wymaganiu
+  podania odpowiedzi}
+
+\addimage{0.6}{app-ui/answer-wrong}{\label{img:answer-wrong}Stan błędu oraz wiadomość~o~błędnej
+  odpowiedzi}
+
+\addimage{0.6}{app-ui/answer-correct}{\label{img:answer-correct}Zmiana licznika nad polem
+  sygnalizująca zarejestrowanie poprawnej odpowiedzi}
+
+\paragraph{Testy blokady widoczności wykresu:} Wykresy~w~aplikacji powinny być widoczne
+dopiero~w~momencie, gdy użytkownik ukończy wszystkie przewidziane dla danego laboratorium zadania.
+Do tego momentu ich widok jest zablokowany~i~wyświetla się ostrzeżenie, że zadania nie są ukończone.
+Na rysunku \ref{img:tasks-not-done} przedstawiony został interfejs użytkownika po zapisaniu
+konfiguracji -- można zauważyć, że widok wykresu jest zablokowany. Rysunek \ref{img:tasks-done}
+przedstawia natomiast jak wygląda interfejs po ukończeniu zadań -- oba pola przyjmujące odpowiedzi
+są zablokowane~i~oznaczone wiadomością~w~kolorze zielony ,,Task completed'' (Zadanie ukończone). Na
+podstawie tego można stwierdzić, że aplikacja prawidłowo blokuje widoczność wykresów do momentu
+ukończenia zadań.
+
+\begingroup
+\addimage{1}{app-ui/tasks-not-done}{\label{img:tasks-not-done}Interfejs użytkownika~z~zablokowanym
+  widokiem wykresu, gdy zadania nie są ukończone}
+\addimage{1}{app-ui/tasks-done}{\label{img:tasks-done}Interfejs użytkownika~z~widocznym
+  wykresem po ukończeniu zadań przewidzianych dla danego laboratorium}
+\endgroup
