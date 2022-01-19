@@ -1,17 +1,23 @@
-Celem pracy było stworzenie aplikacji internetowej, która może zostać
-wykorzystana jako narzędzie do wspomagania studentów wykonujących ćwiczenia w laboratorium
-Przetworników Pomiarowych.
+Celem pracy było stworzenie aplikacji internetowej, która może zostać wykorzystana jako narzędzie do
+wspomagania studentów wykonujących ćwiczenia~w~laboratorium Przetworników Pomiarowych. Aplikacja
+napisana jest~w~języku TypeScript, który jest rozszerzeniem języka JavaScript.
 
-Aplikacja została napisana w języku Typescript, który jest rozszerzeniem języka Javascript.
-Zaimplementowane zostały trzy ćwiczenia, które wykonywane są przez studentów m.in. na zajęciach
-,,Sensory i Aktuatory'' - do sensorów temperatury (RTD, Termoogniwa), przesunięcia (LVDT) oraz
-tensometrów.
+Narzędzie posiada zaimplementowane 3 typy sensorów pomiarowych, które wykorzystuje się~w~pomiarach
+wielkości nieelektrycznych -- sensory temperatury (termorezystory metalowe, termoogniwa),
+przemieszczenia (transformatorowe czujniki przemieszczeń liniowych) oraz naprężeń
+(tensometry). Dostępna jest możliwość skonfigurowania wybranego do badań
+sensora~w~oparciu~o~parametry rzeczywistych przetworników pomiarowych. Aplikacja daje także dostęp
+do zadań, które należy wykonać~w~celu zrozumienia jak działa dany czujnik. Dodatkowo użytkownik ma
+także dostęp do wygenerowanych charakterystyk, które mogą zostać pobrane~i~zapisane~w~celu
+późniejszego wykorzystania.
 
-Aplikacja zbudowana została wykorzystując frameworki (ang. szkielety aplikacyjne) React oraz
-Next.js, które pozwalają na budowanie złożonych oraz interaktywnych interfejsów
-użytkownika, niż jest to możliwe wykorzystując tylko Javascript. Wykorzystanie języka Typescript
-w~kodzie źródłowym aplikacji pozwoliło na wykorzystanie narzędzi niedostępnych w Javascript.
-
-Interfejs użytkownika został zbudowany wykorzystując do tego biblioteki typu Open Source
-(ang. Otwarte oprogramowanie) -- pozwoliło to na pominięcie wymogu ręcznej stylizacji każdego z
-komponentów w aplikacji.
+Aplikacja zbudowana została wykorzystując bibliotekę \textit{React} oraz framework \textit{Next.js},
+które pozwalają na budowanie złożonych oraz interaktywnych aplikacji. Wykorzystanie języka
+TypeScript do napisania kodu źródłowego aplikacji pozwoliło na używanie narzędzi
+niedostępnych~w~standardowo używanym języku programowania aplikacji internetowych -- JavaScript. Do
+stworzenia interfejsu użytkownika wykorzystana została biblioteka \textit{Chakra UI}. Udostępnia ona
+gotowe komponenty, które po dodatkowym dostosowaniu pozwalają na pomięcie ręcznej stylizacji każdego
+komponentu. Wykorzystano także dodatkowe, mniejsze biblioteki, które ułatwiły dodawanie wzorów
+matematycznych oraz generowanie wykresów. Wszystkie wykorzystane narzędzia oraz biblioteki należą do
+rodziny Otwartego Oprogramowania (ang. \textit{Open Source}) -- korzystanie~z~nich jest darmowe,
+można edytować używany kod źródłowy według własnych potrzeb zgodnie~z~dołączona licencją.
