@@ -2,8 +2,8 @@
 % teorii~w~formie kodu
 Aplikacja korzysta~z~teorii sensorów pomiarowych (przedstawionej~w~rozdziale
 \ref{sect:sensor-theory}) do generowania danych do zadań oraz weryfikowania poprawności odpowiedzi
-wpisywanych przez użytkownika. Każde laboratorium posiada zestaw funkcji, które przekształcają wzory
-teoretyczne do postaci kodu źródłowego.
+ wpisywanych przez użytkownika. Każde zaimplementowane ćwiczenie laboratoryjne posiada zestaw
+ funkcji, które przekształcają wzory teoretyczne do postaci kodu źródłowego.
 
 Na funkcję składają się:
 \begin{itemize}
@@ -26,8 +26,7 @@ mniejsze dodatkowe funkcje lub stałe -- zapewnia to znacznie lepszą czytelnoś
 dana funkcja pełni tylko jedną rolę. Wyznaczona wartość jest~w~fazie końcowej jest zaokrąglana do
 setnych części,~w~celu łatwiejszego operowania nią podczas weryfikacji odpowiedzi użytkownika.
 Zaokrąglenie zostało wykorzystane, ponieważ znacznie łatwiej poprosić użytkownika~o~wyznaczenie
-wartości~w~takiej postaci, niż~w~formacie pełnej wartości zmiennoprzecinkowej -- często do 15 miejsc
-po przecinku.
+wartości~w~takiej postaci, niż~w~formacie pełnej wartości zmiennoprzecinkowej.
 
 Wykorzystanie własnych funkcji zaimplementowanych bezpośrednio~w~kodzie aplikacji daje pewność, że
 wykorzystywane wzory są prawidłowym odzwierciedleniem teorii. Dodatkowo nie jest wymagane

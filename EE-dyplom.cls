@@ -780,9 +780,8 @@
 
 \newenvironment{eqparams}[1][gdzie:]
   {\noindent #1\hfill\newline
-  \begin{tabular}[h]{>{$\quad}l<{$} @{${}$ -- {}} l}}
+  \begin{tabular}[h]{>{$\quad}c<{$} @{${}\quad$--$\quad${}} l}}
   {\end{tabular}\\[\belowdisplayskip]}
-\RequirePackage{tablefootnote}
 
 \newcommand{\degC}{\textrm{$^\circ$}C}
 

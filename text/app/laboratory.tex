@@ -1,9 +1,10 @@
 % Opisanie jak zbudowane jest jedno~z~laboratorium
-Na kod źródłowy laboratorium składają się wywołania opisanych~w~poprzednich rozdziałach komponentów
-oraz specjalnych funkcji, znanych~w~React jako \texttt{hooks}. Budowanie własnych funkcji typu
-\texttt{hook} pozwala na ekstrakcję logiki, która byłaby wielokrotnie powtarzana~w~różnych miejscach
-aplikacji \cite{react-docs}. Przykładem może być odczytywanie wartości~z~komponentu przyjmującego
-odpowiedzi użytkownika, której implementacja przedstawiona została~w~listingu
+Na kod źródłowy każdego ćwiczenia laboratoryjnego składają się wywołania opisanych~w~poprzednich
+rozdziałach komponentów oraz specjalnych funkcji, znanych~w~React jako \texttt{hooks}. Budowanie
+własnych funkcji typu \texttt{hook} pozwala na ekstrakcję logiki, która byłaby wielokrotnie
+powtarzana~w~różnych miejscach aplikacji \cite{react-docs}. Przykładem może być odczytywanie
+wartości~z~komponentu przyjmującego odpowiedzi użytkownika, której implementacja przedstawiona
+została~w~listingu
 \ref{lst:example-hook}.
 
 \addsnippet{code/example-hook}{\label{lst:example-hook}Implementacja przykładowej funkcji typu
@@ -20,20 +21,20 @@ funkcje \colortt{handleChange, handleReset}, których zadaniem jest odpowiednio 
 wartości~w~pamięci aplikacji do najnowszej~w~polu oraz czyszczenie pola przy wywołaniu drugiej
 funkcji.
 
-Cały komponent zarządza wartościami dla danego laboratorium przechowywanymi~w~Context~i~przekazuje
-odpowiednie dane do komponentów, które takich informacji potrzebują (przykładowo przekazanie
-informacji~o~wybranej konfiguracji~z~komponentu, który się tym zajmuje do komponentu, który na ich
-podstawie generuje dane do zadań). Dodatkowo zajmuje się uzupełnianiem informacji, które mają być
-wyświetlone użytkownikowi~w~oknie dialogowym~z~teorią do ćwiczenia (na podstawie wczytanych plików
-konfiguracyjnych). Przedstawia to listing \ref{lst:modal-content}.
+Cały komponent zarządza wartościami dla danego ćwiczenia, które przechowywane są~w~Context oraz
+przekazuje odpowiednie dane do komponentów, które takich informacji potrzebują
+(przykładowo przekazanie informacji~o~wybranej konfiguracji~z~komponentu, który się tym zajmuje do
+komponentu, który na ich podstawie generuje dane do zadań). Dodatkowo zajmuje się uzupełnianiem
+informacji, które mają być wyświetlone użytkownikowi~w~oknie dialogowym~z~teorią do ćwiczenia
+(na podstawie wczytanych plików konfiguracyjnych). Przedstawia to listing \ref{lst:modal-content}.
 
 \addsnippet{code/modal-content}{\label{lst:modal-content}Fragment kodu zajmujący się
   populowaniem okna dialogowego teorii odpowiednimi wzorami~i~tabelami na podstawie plików
   konfiguracyjnych}
 
-Komponent każdego laboratorium wykorzystuje zaimplementowane hooki -- \colortt{useFormInput,
-  useFormValidation, useCompleteTask, useSingleLineChartData} do zarządzania stanem, który
-wykorzystywany jest przez odpowiednie komponenty budujące interfejs użytkownika.
+Komponent każdego ćwiczenia laboratoryjnego wykorzystuje zaimplementowane hooki --
+\colortt{useFormInput, useFormValidation, useCompleteTask, useSingleLineChartData} do zarządzania
+stanem, który wykorzystywany jest przez odpowiednie komponenty budujące interfejs użytkownika.
 
 Poniżej przedstawione są zadania, które wykonują zaimplementowane hooki:
 \begin{itemize}
