@@ -3,9 +3,9 @@
 Do zarządzania stanem komponentów wykorzystano React Context -- metodę pozwalającą na przekazywanie
 danych~w~drzewie komponentów bez wykorzystywania artybutów (props) na każdym poziomie
 \cite{react-docs}. Standardowa metoda, wykorzystująca zależność Rodzic-Dziecko (ang. \textit{Parent
-  to child}) może być uciążliwa, ponieważ dane komponenty tworzące laboratorium składają się
-dodatkowo~z~wielu mniejszych komponentów. Zastosowanie tej metody wymagałoby dodawania artybutów do
-każdego~z~nich, tylko~w~celu przekazania danych~z~komponentu laboratorium do najniżej
+  to child}) może być uciążliwa, ponieważ dane komponenty tworzące elementy ćwiczenia laboratoryjnego
+składają się dodatkowo~z~wielu mniejszych komponentów. Zastosowanie tej metody wymagałoby dodawania
+artybutów do każdego~z~nich, tylko~w~celu przekazania danych~z~głównego komponentu do najniżej
 położonego~w~drzewie elementu, gdzie dane te są wykorzystywane. Schematy blokowe przedstawiające
 standardową metodę przekazywania danych oraz metodą korzystającą~z~Context przedstawiają odpowiednio
 rysunki \ref{img:data-props} oraz \ref{img:data-context}.
@@ -22,7 +22,7 @@ korzysta, nawet jeżeli znajduje się~w~zupełnie innej części drzewa.
 
 W~aplikacji Context używany jest~w~celu przekazywania:
 \begin{itemize}
-  \item[--] informacji~o~obecnie wybranej konfiguracji sensora dla danego laboratorium,
+  \item[--] informacji~o~obecnie wybranej konfiguracji sensora dla danego ćwiczenia,
   \item[--] przekazywania funkcji do aktualizacji stanu zarządzającego konfiguracją sensora,
   \item[--] stanu czy konfiguracja jest zapisana (co pozwala na odblokowanie zadań),
   \item[--] wartości~z~pliku konfiguracyjnego~z~treściami zadań
@@ -33,8 +33,8 @@ W~aplikacji Context używany jest~w~celu przekazywania:
 Powyższe elementy przedstawione zostały~w~listingach \ref{lst:context-sensor},
 \ref{lst:context-functions}.
 
-\addsnippet{code/context-sensor}{\label{lst:context-sensor}Przykładowa fragment Contextu z
-  informacjami dla konkretnego laboratorium}
+\addsnippet{code/context-sensor}{\label{lst:context-sensor}Przykładowy fragment Contextu z
+  informacjami dla konkretnego ćwiczenia}
 
 \addsnippet{code/context-functions}{\label{lst:context-functions}Funkcje przekazywane globalnie
   przez Context~w~drzewie komponentów}
