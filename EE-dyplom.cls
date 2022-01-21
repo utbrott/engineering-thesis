@@ -702,6 +702,14 @@
     \cleardoublepage
 }
 
+\RequirePackage{pdfpages}
+\newcommand{\authorfiles}{
+    \includepdf[pages={1}]{gfx/oswiadczenie_autora.pdf}
+    \cleardoublepage
+    \includepdf[pages={1}]{gfx/oswiadczenie_licencja.pdf}
+    \cleardoublepage
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Jedno polecenie - kombajn stron początkowych
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -711,7 +719,7 @@
     \pagestyle{empty}
     \maketitle
     \abstractpages
-    \authorship
+    \authorfiles
     \tableofcontents
     \cleardoublepage
     \pagestyle{headings}
@@ -776,7 +784,7 @@
   {\end{tabular}\\[\belowdisplayskip]}
 \RequirePackage{tablefootnote}
 
-\newcommand{\degC}{\textrm{$^\circ$C}\space}
+\newcommand{\degC}{\textrm{$^\circ$}C}
 
 \newcommand{\addimage}[3]{
     \begin{figure}[!htbp]

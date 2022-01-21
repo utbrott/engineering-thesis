@@ -1,6 +1,6 @@
 Zaimplementowany~w~aplikacji sensor LVDT należy do grupy czujników wykorzystujących zmiany
-parametrów obwodu -- indukcyjności. Czujnik typu LVDT (ang. Linear Variable Differential
-Transformer, transformatorowy czujnik przemieszczeń liniowych) zbudowany jest na podstawie
+parametrów obwodu -- indukcyjności. Czujnik typu LVDT (ang. \textit{Linear Variable Differential
+  Transformer}, transformatorowy czujnik przemieszczeń liniowych) zbudowany jest na podstawie
 transformatora różnicowego. Posiada on trzy uzwojenia -- pierwotne oraz dwa wtórne, które nawijane
 są na cylindryczną, nieprzewodzącą obudowę. Wewnątrz obudowy znajduje się rdzeń ferromagnetyczny,
 który może się swobodnie poruszać. Schemat układu przetwornika LVDT przedstawiono na
@@ -13,11 +13,18 @@ rysunku~\ref{img:lvdt}.
 \end{figure}
 
 Uzwojenie pierwotne zasilane jest napięciem przemiennym.~W~uzwojeniach wtórych (oznaczone jako Ns na
-schemacie) indukują się napięcia, które zależne są od położenia rdzenia wewnątrz obudowy.~W~stanie
-ustalonym -- gdy rdzeń znajduje się~w~równej odległości od obu cewek wtórnych -- napięcia będą sobie
-równe. Ponieważ układ sensora LVDT jest zbudowany na podstawie transformatora różnicowego, to
-napięcie na wyjściu całego układu będzie równe różnicy napięć na cewkach wtórnych. Zależność tę
-opisuje wzór \cite{sensory_wykład}:
+schemacie) indukują się napięcia, które zależne są od położenia rdzenia wewnątrz obudowy. Gdy rdzeń
+znajduje się~w~równej odległości od obu cewek wtórnych -- napięcia będą sobie równe. Ponieważ układ
+sensora LVDT jest zbudowany na podstawie transformatora różnicowego, to napięcie na wyjściu całego
+układu będzie równe różnicy napięć na cewkach wtórnych. Zależność tę opisuje wzór
+\cite{sensory_wykład}:
+
+\begin{equation}
+  u_{wy}=u_1-u_2=U_1 \sin{(\omega t + \varphi_1)} - U_2 \sin{(\omega t + \varphi_2)}
+\end{equation}
+
+Natomiast charakterystykę przetwarzania przetwonika LVDT (zależność napięcia wyjściowego oraz
+przesunięcia rdzenia względem punktu równowagi) opisuje się wzorem:
 
 \begin{equation}\label{eqn:theory-lvdt}
   U_{wy}=f\cdot I_p\cdot\bigg(4\pi\cdot N_p N_w\cdot \mu_0\cdot l_p\cdot\frac{x}{3l_w}\cdot
@@ -42,6 +49,24 @@ pomiędzy uzwojeniami wtórnymi \cite{sensory_wykład}.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{sensor-theory/transfer-lvdt}
-  \caption{\label{img:transfer-lvdt}Charakterystyka przetwarzania sensora LVDT~w~zależności od
-    przesunięcia.}
+  \caption{\label{img:transfer-lvdt}Przykładowa charakterystyka przetwarzania sensora
+    LVDT~w~zależności od przesunięcia.}
 \end{figure}
+
+Sensory LVDT najczęściej stosuje się~w~zakresie $\pm$5 do $\pm$250mm, przy czym możliwe jest
+mierzenie większych zakresach, jednakże wiąże się to ze znacznym zwiększeniem rozmiarów samego
+przetwornika. ~W~układach przetworników LVDT napięcie mierzone na wyjściu ma bardzo małą amplitudę,
+dlatego stosuje się wzmacnianie takiego sygału. Jednakże~w~tym przypadku pojawia się ograniczenie
+związane~z~zaszumieniem.~W~tym celu stosuje się przetworniki fazoczułe. Układy te pozwalają na
+wydzielnie~z~zaszumionego, wzmocnionego sygnału, tylko takie sygnały, których częstotliwość oraz
+faza są zgodne~z~odniesieniem. Dzięki temu można mierzyć sygnały na poziomie nawet
+nanowoltów~\cite{tumanski2007}. Wykorzystanie przetwornika fazoczułego przy pomiarach przetwornikiem
+LVDT pozwala także na używanie jego pełnego zakresu, ponieważ możliwe jest określenie po której
+stronie względem punktu równowagi znajduje się rdzeń.
+
+Sensory można stosować~w~dwóch typach układu: AC/AC oraz DC/DC.~W~przypadku układów
+napięcia przemiennego otrzymuje się teoretycznie nieskończoną rozdzielczość pomiarową, większą
+wytrzymałość mechaniczną przetwonika oraz mniejsze rozmiary układu. Natomiast korzystając~z~układów
+napięcia stałego nie jest wymagane korzystanie~z~układów kondycjonujących sygnał oraz kompensujących
+błędy pomiarowe. Częściej stosowane są jednak układy AC/AC~z~uwagi na zalety przeważające nad
+układami DC/DC.

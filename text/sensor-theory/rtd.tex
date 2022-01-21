@@ -1,10 +1,10 @@
 W sensorach termorezystancyjnych metalowych, do których należy RTD, wykorzystywane jest zjawisko
 zmiany rezystacji metalu~w~funkcji temperatury. Do najczęściej stosowanych należą metale: platyna
 (Pt), nikiel (Ni), miedź (Cu), których charakterystyki~i~właściwości metrologiczne są
-ujęte~w~odpowiednich normach \cite{rtd_norm}.
+ujęte normie PN-EN 60751:2009 \cite{rtd_norm}.
 
 Oznaczanie czujników temperatury jest związane~z~rodzajem zastosowanego metalu oraz wartością
-rezystancji czujnika $R_0$~w~temperaturze odniesienia $T_0$, którą przyjmuję się jako 0\degC
+rezystancji czujnika $R_0$~w~temperaturze odniesienia $T_0$, którą przyjmuję się jako 0\degC\space
 \cite{gawedzki2010}. Zależność rezystancji od temperatury standardowo jest nieliniowa~i~wyznaczana
 jest eksperymentalnie, jednakże można wykorzystać aproksymację funkcją liniową:
 
@@ -47,3 +47,21 @@ aproksymacji zależność przedstawia równanie \ref{eq:alpha2} \cite{gawedzki20
     \bottomrule
   \end{tabular}
 \end{table}
+
+Typowe układy pracy dla termorezystorów metalowych to:
+\begin{itemize}
+  \item [--] \textbf{układ 2-przewodowy}, który używa się~w~sytuacjach, gdy nie jest wymagana duża
+        dokładność pomiarowa. Takie połączenie powoduje dodanie rezystancji przewodów do rezystancji
+        czujnika, co skutkuje błędami pomiarowymi. Im większa długość przewodów~w~układzie, tym
+        większe będą błędy pomiarowe;
+  \item [--] \textbf{układ 3-przewodowy} wykorzystywany, aby zniwelować wpływ rezystacji przewodów
+        na otrzymywane wyniki pomiarów.~W~takim połączeniu powstają dwa układy pomiarowe. Jeden z
+        nich wykorzystywany jest do pomiaru wyłącznie rezystancji przewodów. Umożliwia to
+        kompensację błędu pomiarowego;
+  \item [--] \textbf{układ 4-przewodowy}, który jest najdokładniejszym~z~układów pomiarowych. W
+        praktyce stosowany tylko~w~pomiarach laboratoryjnych. Otrzymywane wyniki pomiarowe
+        pozbawione są jakiegokolwiek błędu związanego~z~przewodami~w~układzie.
+\end{itemize}
+
+Termorezystory metalowe stostuje się do pomiarów~w~zakresach -240 do 650\degC.~W~aplikacji
+zaimplementowany został zakres 0 do 500\degC, tak aby łatwiej można było porównać je do termoogniw.

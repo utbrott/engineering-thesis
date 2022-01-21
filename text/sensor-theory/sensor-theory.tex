@@ -1,8 +1,8 @@
 % Krótki wstęp do pomiarów wielkości nieelektrycznych~i~sensorów pomiarowych
 Pomiary wielkości nieelektrycznych są podstawą znacznej części zagadnień przemysłowych -- ze
-względów przeprowadzania procesów kontrolnych oraz nadzorczych~w~tej dziedzinie. Obecne są także w
-problematyce życia codziennego -- wykorzystywane~w~celach ochrony oraz zapewniania bezpieczeństwa
-człowieka.
+względów przeprowadzania procesów kontrolnych oraz nadzorczych~w~tej dziedzinie. Obecne są
+także~w~problematyce życia codziennego -- wykorzystywane~w~celach ochrony oraz zapewniania
+bezpieczeństwa człowieka.
 
 Pomiary wielkości nieelektycznych wykonuje się wykorzystując do tego przetworniki pomiarowe, często
 nazywane także sensorami. Urządzenia te wykorzystywane, aby przetworzyć mierzoną wielkość na sygnał
@@ -17,19 +17,24 @@ układów pomiarowych, które dotyczą omawianych czujników.
 
 % Sensory temperatury - RTD + Thermocouple
 \section{Sensory temperatury}
-W aplikacji zaimplementowane zostały dwa stosowane typy przetworników temperaturowych -- RTD (ang.
-Resistance Temperature Detector, Rezystancyjne Detektory Temperatury), należące do grupy czujników
-termorezystancyjnych metalowych oraz termoogniwa, należące do grupy czujników termoelektrycznych.
+W~aplikacji zaimplementowane zostały dwa stosowane typy przetworników temperaturowych:
+\begin{itemize}
+  \item [--] Termorezystory metalowe (RTD, ang. \textit{Resistance Temperature Detector}),
+  \item [--] Termoogniwa, należące do grupy czujników termoelektrycznych.
+\end{itemize}
 Dla obu typów przetworników określa się charakterystyki statyczne, wyznaczane na podstawie zmian
 parametrów obwodu, którym są one umieszczone oraz charakterystyki dynamiczne, określające zachowanie
 się tych przetworników~w~przypadku gwałtownej zmiany temperatury otoczenia,~w~którym dany sensor się
 znajduje.
 
-\subsection{RTD - Termorezystory metalowe}
+\subsection{Termorezystory metalowe (RTD)}
 \input{text/sensor-theory/rtd}
 
 \subsection{Termoogniwa}
 \input{text/sensor-theory/thermocouple}
+
+\subsection{Porównanie sensorów temperatury}
+\input{text/sensor-theory/temperature-comparison}
 
 \subsection{Charakterystyki dynamiczne sensorów temperatury}
 \input{text/sensor-theory/dynamic-temperature.tex}
@@ -42,15 +47,13 @@ Wykonywanie pomiarów wymaga zdefiniowania punktu odniesienia, względem któreg
 Pomiary można wykonywać różnymi metodami -- na podstawie zmiany parametrów obwodu elektrycznego,
 korzystając ze zjawisk związanych~z~propagacją fal elektromagnetycznych lub na podstawie
 ultradźwiękowych metod pomiarowych.
-Test
-
 
 \subsection{LVDT - Transformatorowe czujniki przemieszczeń liniowych}
 \input{text/sensor-theory/lvdt}
 
 % Sensory naprężenia - Strain gauge
 \section{Sensory naprężenia}
-Czujniki naprężenia operują w oparciu o zjawisko zmiany rezystancji materiału, z którego sensor
+Czujniki naprężenia operują~w~oparciu~o~zjawisko zmiany rezystancji materiału,~z~którego sensor
 jest wykonany, pod wpływem naprężeń mechanicznych. Zmiana rezystancji spowodowana jest odkształcaniem
 się elementu, do którego przytwierdzony jest przetwornik tensometryczny. Podstawową funkcję
 przetwarzania tensometrów opisuje równanie \cite{hoffman1989, milek2006}:

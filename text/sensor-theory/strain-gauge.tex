@@ -1,58 +1,134 @@
 Na zmianę parametrów czujnika tensometrycznego metalowego największy wpływ ma wartość odkszałcenia
 elementu, na którym zamontowany jest sensor. Jednakże istotną rolę dla pracy przetwornika stanowi
-wpływ temperatury otoczenia. Aby zniwelować negatywny wpływ temperatury tensometry
-pracują~w~układach mostkowych -- wyróżnia się układy ćwierćmostkowe, półmostkowe oraz pełnomostkowe,
-przy czym tylko układy składające się~z~dwóch lub więcej tensometrów mają możliwość kompensacji
-temperaturowej. Przykładowy schemat układu mostkowego przedstawiono na rysunku
-\ref{img:strain-gauge}.
+wpływ temperatury otoczenia. Negatywny wpływ temperatury można skompensować poprzez odpowiedni dobór
+parametrów tensometru na etapie produkcji -- dodając do podstawowego materiału sensora odpowiednie
+domieszki. Przetworniki tensometryczne przetwarzają nieelektryczną wielkość odkształcenia
+$\varepsilon$ na wielkość elektryczną -- zmianę rezystancji. Następnie~w~torze pomiarowym stosuje
+się przetwornik pozwalający na generowanie mierzalnego sygnału napięciowego.
 
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=0.5\textwidth]{sensor-theory/strain-quater}
-  \caption{\label{img:strain-gauge}Przykładowy schemat układu mostkowego~z~tensometrami (tutaj:
-    układ ćwierćmostkowy).}
-\end{figure}
+Jeżeli element, na którym zamontowane są tensometry ulegnie odkształceniu, to zmieni się wartość
+rezystancji sensora. Wartości zmian rezystancji mogą być dodatnie lub ujemne, jest to zależne od
+kierunku~w~jakim odkształca się czujnik. Przedstawia to wzór \cite{gawedzki2010}:
 
-Zmianę rezystancji przetwornika tensometrycznego przedstawia zależność opisana wzorem
-\ref{eq:strain-r}, natomiast~w~przypadku, gdy brany jest pod uwagę wpływ temperatury zależność ta
-przedstawiona jest wzorem \ref{eq:strain-temp}. Wykonując pomiary naprężenia przetwornikami
-tensometrycznymi, pracującymi~w~układzie mostkowym, należy mierzyć napięcie na wyjściu takiego
-układu. Wykorzystując zależność przedstawioną równaniem \ref{eq:strain-bridge}, można wyznaczyć
-teoretyczne napięcie wyjściowe układu.
+\begin{equation}
+  R_i = R_{i\,0} \pm \Delta R_i, \quad\quad\quad \text{gdzie:}\quad i=1,2,3,4
+\end{equation}
 
-\begin{equation}\label{eq:strain-r}
-  \Delta R = R\cdot\varepsilon\cdot GF
+Zmianę wartości rezystancji przetwornika tensometrycznego przedstawia zależność opisana wzorem
+\ref{eqn:strain-r}, natomiast~w~przypadku, gdy brany jest pod uwagę wpływ temperatury zależność ta
+przedstawiona jest wzorem \ref{eqn:strain-temp}.
+
+\begin{equation}\label{eqn:strain-r}
+  \Delta R_i = R_i\cdot\varepsilon\cdot k
+\end{equation}
+
+\begin{equation}\label{eqn:strain-temp}
+  \Delta R_i = R_i(\varepsilon\cdot k + \alpha\Delta T)
 \end{equation}
 
 \begin{eqparams}
-  R & bazowa rezystancja tensometru,\\
+  R_i & bazowa rezystancja tensometru,\\
   \varepsilon & wartość odkształcenia,\\
-  GF & współczynnik odkształcenia,\\
-\end{eqparams}
-
-\begin{equation}\label{eq:strain-temp}
-  \Delta R = R(\varepsilon\cdot GF + \alpha\Delta T)
-\end{equation}
-
-\begin{eqparams}
-  R & bazowa rezystancja tensometru,\\
-  \varepsilon & wartość odkształcenia,\\
-  GF & współczynnik odkształcenia,\\
+  k & współczynnik odkształcenia (stała tensometryczna)\\
   \alpha & współczynnik temperaturowy metalu (zgodnie~z~tabelą \ref{tab:temp_alpha}),\\
   \Delta T & różnica temperatur pomiędzy temperaturą otoczenia~a~odniesienia (20\degC),\\
 \end{eqparams}
 
-\begin{equation}\label{eq:strain-bridge}
-  U_{wyj}=\frac{1}{4}\cdot U_{wej}\cdot\bigg(\frac{\Delta R_1}{R_1}-\frac{-\Delta R_2}{R_2}
-  +\frac{\Delta R_3}{R_3}-\frac{-\Delta R_4}{R_4}\bigg)
+Do pomiarów tensometrycznych często stosuje się układy mostkowe. Zastowanie takiego układu pozwala
+eliminację składowej siły powodującej odkształcenie, która nie jest mierzona. Dodatkowo dzięki
+zastosowaniu mostka możliwa jest kompensacja zakłóceń związanych ze zmianami temperatury otoczenia
+podczas pomiaru.
+
+Wyróżnia się trzy konfiguracje mostka tensometrycznego:
+\begin{itemize}
+  \item [--] układ ćwierćmostkowy~z~jednym pracującym tensometrem
+  \item [--] układ półmostkowy~z~dwoma czynnymi tensometrami (występują dwa rodzaje tej
+        konfiguracji,~z~tensometrami~w~ramionach sąsiednich lub przeciwległych),
+  \item [--] układ pełnomostkowy~z~czterema aktywnymi tensometrami.
+\end{itemize}
+Wszystkie układy mają różną skuteczność kompensacji wpływu temperatury. Na
+rysunku~\ref{img:strain-gauge} przedstawiony został schemat układu mostkowego.
+
+\addimage{0.65}{sensor-theory/strain-gauge}{\label{img:strain-gauge}Schemat układu mostkowego}
+
+\paragraph{Układ ćwierćmostkowy:} Posiada jeden czynny tensometr (przykładowo~w~pierwszym ramieniu
+mostka), do wyznaczenia napięcia na wyjściu układu, korzystając~z~zależności \ref{eqn:strain-temp},
+stosuje się równanie:
+
+\begin{equation}
+  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\cfrac{\Delta R_1}{R_1}=\cfrac{1}{4}\cdot{U_z}\cdot({k}
+  \cdot\varepsilon_1+{k_1}\cdot\alpha_1\Delta{T_1})
 \end{equation}
 
-\begin{table}[!htbp]
-  \begin{eqparams}
-    R_i & bazowa rezystancja i-tego tensometru~w~mostku,\\
-    \Delta R_i & zmiana rezystancji i-tego tensometru~w~mostku
-    \tablefootnote{W zależności od typu mostka, jeżeli $R_i$ jest zwykłym rezystorem, to $\Delta R_i$ będzie równa 0.},\\
-    U_{wej} & napięcie zasilania mostka,\\
-  \end{eqparams}
-\end{table}
+Na podstawie tego równania można stwierdzić, że układ nie będzie kompensował wpływu temperatury.
+
+\paragraph{Układ półmostkowy:} Posiada dwa czynne tensometry. Jeżeli zastostuje się
+wariant~z~tensometrami~w~sąsiednich ramionach (przykładowo pierwszym~i~trzecim), to napięcie
+wyjściowe wyznacza się~z~zależności:
+
+\begin{equation}\label{eqn:half-bridge-adj}
+  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_3}{R_3}\bigg)=
+  \cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)+{k_1}\cdot(\alpha_1
+  \Delta{T_1}-\alpha_3\Delta{T_3})\big)
+\end{equation}
+
+Jeżeli obecne~w~układzie tensometry będą pracować~w~takiej samej temperaturze, to wpływ temperatury
+zostanie skompensowany~i~napięcie wyjściowe będzie można wyznaczyć korzystając~z~równania:
+
+\begin{equation}\label{eqn:half-bridge-compensation}
+  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)\big)
+\end{equation}
+
+Natomiast~w~przypadku zastosowania wariantu~o~ramionach przeciwległych (przykładowo~z~tensometrami
+włączonymi do ramion pierwszego~i~czwartego) to zależność \ref{eqn:half-bridge-adj} przyjmie postać:
+
+\begin{equation}
+  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_3}{R_3}\bigg)=
+  \cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1+\varepsilon_3)+{k_1}\cdot(\alpha_1
+  \Delta{T_1}+\alpha_3\Delta{T_3})\big)
+\end{equation}
+~i~nie nastąpi kompensacja, natomiast wynik pomiaru będzie zawierał błąd związany~z~negatywnym
+wpływem temperatury.
+
+\paragraph{Układ pełnomostkowy:} Posiada cztery tensometry włączone do każdego~z~ramion mostka.
+Napięcie wyjściowe wyznacza się równaniem:
+
+\begin{align}
+  U_{wy} & =\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}+\cfrac{\Delta R_2}{R_2}-
+  \cfrac{\Delta R_3}{R_3}+\cfrac{\Delta R_4}{R_4}\bigg)=              \nonumber               \\
+         & =\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot
+  (\varepsilon_1+\varepsilon_2-\varepsilon_3+\varepsilon_4)+{k_1}\cdot(\alpha_1\Delta{T_1}+
+  \alpha_2\Delta{T_2}-\alpha_3\Delta{T_3}+\alpha_4\Delta{T_4})\big)
+\end{align}
+
+Zakładając identyczne warunki termiczne~w~otoczeniu każdego sensora można stwierdzić, że wpływ
+temperatury zostanie skompensowany.~W~takim przypadku napięcie wyjściowe będzie można wyznaczyć
+korzystając~z~równania \ref{eqn:half-bridge-compensation} uzupełnionego~o~dwa dodatkowe
+tensometry~w~układzie:
+
+\begin{equation}
+  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1+\varepsilon_2-\varepsilon_3+
+  \varepsilon_4)\big)
+\end{equation}
+
+\begin{eqparams}[W każdym~z~powyższych wzorów (\textit{\textrm{i}} = 1,2,3,4):]
+  \Delta R_i & zmiana rezystancji i-tego tensometru (wartość może być dodatnia lub ujemna)\\
+  R_i & bazowa rezystancja i-tego tensometru\\
+  k & współczynnik odkształceń (stała tensometryczna)\\
+  \varepsilon_i & odkształcenie i-tego tensometru\\
+  U_z & napięcie zasilania układu mostkowego\\
+  \alpha_i & współczynnik temperaturowy materiału i-tego tensometru\\
+  \Delta{T_i} & różnica temperatur pomiędzy temperaturą otoczenia~a~odniesienia (20\degC)\\
+\end{eqparams}
+
+We wzorach pojawia się dodatkowa stała $k_1$, ponieważ rzeczywiste stałe tensometryczne
+odbiegają od wartości założonych przez producenta sensora w fazie projektowania.
+
+Problem braku kompensacji temperaturowej w układach ćwierćmostkowym oraz półmostkowym z ramionami
+przeciwległymi można rozwiązać poprzez zastosowanie tensometrów biernych. Montuje się je w pobliżu
+dwóch czynnych tensometrów, jednakże bez przytwierdzania ich do elementu, którego odkształcenia są
+mierzone \cite{gawedzki2010}. W takiej konfiguracji sensory bierne nie zmieniają swojej rezystancji
+na skutek działającej siły, a tylko na zmiany temperatury, dzięki czemu umożliwią kompensowanie jej
+wpływu.
+
 

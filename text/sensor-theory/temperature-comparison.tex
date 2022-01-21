@@ -1,0 +1,47 @@
+Oba typy sensorów posiadają charakterystyczne dla nich układy pomiarowe, zakresy w jakich można je
+wykorzystać. Wiąże się to z szeregiem zalet oraz wad każdego z nich. Tabela
+\ref{tab:rtd-vs-thermocouple} przedstawia porównanie wybranych parametrów obu wariantów sensorów
+temperatury. natomiast w tabeli \ref{tab:thermocouple-pros-cons} przedstawione zostało porównanie
+ich zalet i wad.
+\begin{table}[!htbp]
+  \centering
+  \caption{\label{tab:rtd-vs-thermocouple}Porównanie parametrów termorezystorów do termoogniw}
+  \begin{tabular}{ccc}
+    \toprule
+    Parametr                           & Termorezystor   & Termoogniwo        \\
+    \midrule
+    Liniowość charakterystyki          & Dobra           & Dostateczna        \\
+    Stabilność                         & Dobra           & Dostateczna        \\
+    Czułość sensora                    & Średnia         & Niska              \\
+    Czas odpowiedzi                    & Średni          & Średni do niskiego \\
+    Dokładność                         & Wysoka          & Średnia            \\
+    Wytrzymałość mechaniczna           & Dobra           & Znakomita          \\
+    Podatność na efekt samoogrzewania? & Tak, nieznaczna & Nie                \\
+    Koszt sensora                      & Wysoki          & Bardzo niski       \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+  \centering
+  \caption{\label{tab:thermocouple-pros-cons}Zalety i wady obu rodzajów przetworników}
+  \begin{tabular}{p{0.5cm}|c|c}
+    \toprule
+                                                                       & Termorezystory                        & Termoogniwa                              \\
+    \midrule
+    \parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Zalety}}} & Najbardziej stabilny typ sensora      & Prosta budowa, tanie w wykonaniu         \\
+                                                                       & Liniowe charakterystyki przetwarzania & Nie wymagają zewnętrznego zasilania      \\
+                                                                       & Najdokładniejsze pomiary              & Szeroki zakres temperatur                \\
+    \midrule
+    \parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Wady}}}   & Wymagają zewnętznego zasilania        & Nieliniowa charakterystyka przetwarzania \\
+                                                                       & Niewielkie zmiany rezystancji         & Niskie napięcie wyjściowe                \\
+                                                                       & Podatne na efekt samoogrzewania       & Mało stabilne pomiary                    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Termorezystory metalowe są podatne na efekt samoogrzewania. Jest on związany z wymogiem zewnętrznego
+zasilania układu, którym pracuje sensor. Efekt ten, spowodowany przepływem prądu przez rezystor
+jakim jest sensor, może powodować pojawianie się błędów pomiarowych \cite{self-heating}. Nie
+występuje on w przypadku termoogniw, ponieważ ich układ nie jest zasilany zewnętrznie -- wykonuje
+się w nim pomiary różnicy potencjałów między końcami przewodników użytych do zbudowania sensora.

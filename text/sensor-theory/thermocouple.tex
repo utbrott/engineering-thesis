@@ -2,40 +2,50 @@ Sensory termoelektryczne wykorzystują zjawisko termoelekryczne, nazywane też e
 Seebecka.~W~obwodzie, który składa się~z~dwóch różnych metali, których końce są połączone~i~znajdują
 się~w~różnych temperaturach, płynie prąd elektryczny. Jednakże~w~celu pomiarów temperatury wymagany
 jest pomiar różnicy potencjałów (spadku napięcia), pojawiającego się między niepołączonymi końcami
-przewodników. Schemat układu do wykonywania takiego pomiaru przedstawiono na rysunku
-\ref{img:thermocouple}. Zmierzona różnica potencjałów wyraża się równaniem:
+przewodników. Działanie zjawiska przedstawione zostało na rysunku \ref{img:thermoelectric-effect}.
+Zmierzona różnica potencjałów wyraża się równaniem:
 
 \begin{equation}
   \Delta \varphi = S_{AB}\cdot\Delta T
 \end{equation}
 
 \begin{eqparams}
-  S_{AB} & współczynnik Seebecka,~w~temperaturze 0\degC, \\
+  S_{AB} & współczynnik Seebecka (~w~temperaturze odniesienia 0\degC), \\
   \Delta T & różnica temperatur pomiędzy stroną \enquote{gorącą} oraz \enquote{zimną} układu.
 \end{eqparams}
 
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[scale=0.8]{sensor-theory/temperature-thermocouple}
-  \caption{\label{img:thermocouple}Schemat sensora termoelektrycznego -- termoogniwa}
-\end{figure}
+\addimage{0.6}{sensor-theory/thermoelectric-effect}{\label{img:thermoelectric-effect}Schemat
+  działania zjawiska termoeletrycznego} ~W~praktyce przy pomiarach termoogniwami wykorzystuje się
+układ przedstawiony na rysunku~\ref{img:thermocouple}. Jeżeli do połączenie wykorzystane zostałyby
+przewody wykonane~z~miedzi, to~w~miejscu połączenia pojawiłby się kolejne złącza termoelekryczne.
+Skutkowałoby to błędami~w~pomiarach temperatury.~W~celu uniknięcia takiej sytuacji stosuje się
+specjalne przewody kompensacyjne, które wykonane są~z~takiego samego materiału jak termoogniwo
+lub~z~materiałów~o~takich samych własnościach termoelektrycznych.
+
+\addimage{0.6}{sensor-theory/thermocouple}{\label{img:thermocouple}Schemat
+  układu do pomiarów termoogniwami}
 
 Współczynnik Seebecka jest wartością charakterystyczną dla danego typu termoogniwa, zależnym od
 metali, które zostały użyte do wytworzenia sensora. Wartości współczynnika \cite{thermocouple} dla
 wybranych termoelementów wraz~z~ich oznaczeniami przedstawia tabela \ref{tab:thermocouple}.
+Pomiary~z~wykorzystaniem termoogniw można wykonywać~w~zakresie -250 do 1760\degC,~w~zależności od
+użytego typu termoogniwa. Zakresy temperatur dla każdego~z~typów także przedstawione
+zostały~w~tabeli. W~aplikacji zaimplementowany został zakres 0 do 500\degC, tak aby łatwiej można
+było zaobserwować różnice pomiędzy termoogniwami~a~termorezystorami.
 
 \begin{table}[!htbp]
   \centering
-  \caption{\label{tab:thermocouple}Wartości współczynnika Seebecka dla wybranych termoogniw}
-  \begin{tabular}{ccc}
+  \caption{\label{tab:thermocouple}Wartości wsp. Seebecka oraz zakresy temperatur dla wybranych
+    termoogniw}
+  \begin{tabular}{cccc}
     \toprule
-    Typ termoogniwa & Oznaczenie & Współczynnik Seebecka $S_{AB}$ [$\mu V\cdot$\degC$^{-1}$] \\
+    Typ termoogniwa & Oznaczenie & Wsp.Seebecka $S_{AB}$ [$\mu V\cdot$\degC$^{-1}$] & Zakres temperatur [\degC] \\
     \midrule
-    Fe-CuNi         & J          & 51                                                        \\
-    NiCr-NiAl       & K          & 40                                                        \\
-    PtRh(13\%)-Pt   & R          & 12                                                        \\
-    Cu-CuNi         & T          & 60                                                        \\
-    NiCr-CuNi       & E          & 40                                                        \\
+    Fe-CuNi         & J          & 51                                               & 0 $\div$ 750              \\
+    NiCr-NiAl       & K          & 40                                               & -200 $\div$ 1250          \\
+    PtRh(13\%)-Pt   & R          & 12                                               & 0 $\div$ 1450             \\
+    Cu-CuNi         & T          & 60                                               & -250 $\div$ 350           \\
+    NiCr-CuNi       & E          & 40                                               & -200 $\div$ 900           \\
     \bottomrule
   \end{tabular}
 \end{table}
