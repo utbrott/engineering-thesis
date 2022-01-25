@@ -57,11 +57,16 @@ Typowe układy pracy dla termorezystorów metalowych to:
   \item [--] \textbf{układ 3-przewodowy} wykorzystywany, aby zniwelować wpływ rezystacji przewodów
         na otrzymywane wyniki pomiarów.~W~takim połączeniu powstają dwa układy pomiarowe. Jeden z
         nich wykorzystywany jest do pomiaru wyłącznie rezystancji przewodów. Umożliwia to
-        kompensację błędu pomiarowego;
+        kompensację błędu pomiarowego. Jest to najczęściej wykorzystywany układ do pomiarów
+        termorezystorami metalowymi. Schemat takiego układu przedstawiony został na rysunku
+        \ref{img:rtd-3wire};
   \item [--] \textbf{układ 4-przewodowy}, który jest najdokładniejszym~z~układów pomiarowych. W
         praktyce stosowany tylko~w~pomiarach laboratoryjnych. Otrzymywane wyniki pomiarowe
         pozbawione są jakiegokolwiek błędu związanego~z~przewodami~w~układzie.
 \end{itemize}
+
+\addimage{0.65}{sensor-theory/rtd-3wire}{\label{img:rtd-3wire}Schemat 3 przewodowego układu
+  pomiarowego}
 
 Termorezystory metalowe stostuje się do pomiarów~w~zakresach -240 do 650\degC.~W~aplikacji
 zaimplementowany został zakres 0 do 500\degC, tak aby łatwiej można było porównać je do termoogniw.

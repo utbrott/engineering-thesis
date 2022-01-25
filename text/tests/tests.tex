@@ -1,9 +1,36 @@
 % Opis testów, które pozwalają określić czy aplikacja funkcjonuje jak powinna
-Aplikacja posiada zaimplementowane trzy ćwiczenia laboratoryjne. Należało sprawdzić czy wszystkie
-dodane funkcje obecne w kodzie źródłowym działają prawidłowo. Testy podzielone zostały na dwie
-kategorie. Sprawdzone zostało czy zaimplementowane elementy interfejsu użytkownika reagują poprawnie
-na zmiany stanu~w~aplikacji. Zweryfikowane zostało także czy obecne~w~aplikacji odzwierciedlenia
-teorii sensorów pomiarowych zwracają poprawne wartości.
+Aplikacja posiada zaimplementowane trzy ćwiczenia laboratoryjne. Na każde~z~nich składają się:
+
+\begin{itemize}
+  \item [--] komponent do wyboru~i~zapisu konfiguracji sensora,
+  \item [--] komponent do wyświetlania zadań oraz danych do nich,
+  \item [--] komponent do przyjmowania odpowiedzi uzytkownika,
+  \item [--] komponent do wyświetlania wygenerowanych wykresów.
+\end{itemize}
+
+Należało sprawdzić czy dodane funkcje obecne~w~kodzie źródłowym działają prawidłowo. Testy
+podzielone zostały na dwie kategorie. Sprawdzone zostało czy zaimplementowane elementy interfejsu
+użytkownika reagują poprawnie na zmiany stanu~w~aplikacji -- blokowanie widoku~w~odpowiednich
+momentach interakcji użytkownika~z~aplikacją, wyświetlanie błędów jeżeli brakuje odpowiedzi lub jest
+ona nieprawidłowa, etc.
+
+Zweryfikowane zostało także czy obecne~w~aplikacji odzwierciedlenia teorii sensorów pomiarowych
+zwracają poprawne wartości. Testy opierały się na sprawdzeniu czy wartości liczone przez aplikację
+są zgodne~z~wartościami, które wyliczone zostały korzystając~z~wzorów teoretycznych. Dodatkowo
+sprawdzone zostało czy generowane wykresy charakterystyk sensorów są prawidłowe.
+
+\noindent Poniżej przedstawiono listę zweryfikowanych wykresów:
+
+\begin{itemize}
+  \item [--] \textbf{dla termorezystorów}: charakterystyki statyczna zależności rezystancji od
+        temperatury oraz dynamiczna temperatury od czasu;
+  \item [--] \textbf{dla termoogniw}: charakterystyki statyczna zależności napięcia wyjściowego od
+        temperatury oraz dynamiczna temperatury od czasu;
+  \item [--] \textbf{dla sensora LVDT}: charakterystyka zależności napięcia wyjściowego od
+        przesunięcia rdzenia;
+  \item [--] \textbf{dla tensometrów}: charakterystyki zależności napięcia wyjściowego od wartości
+        odkształcenia, napięcia wyjściowego oraz rezystancji od temperatury;
+\end{itemize}
 
 \section{Poprawność działania interfejsu użytkownika}
 \input{text/tests/ui-tests}

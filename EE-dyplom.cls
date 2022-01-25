@@ -804,3 +804,6 @@
 \newcommand{\colortt}[1]{
   \textcolor{EEBlueDark}{\texttt{#1}}
 }
+
+\RequirePackage{placeins}
+\RequirePackage{nicefrac}

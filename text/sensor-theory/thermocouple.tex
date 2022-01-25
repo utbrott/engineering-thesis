@@ -1,12 +1,12 @@
 Sensory termoelektryczne wykorzystują zjawisko termoelekryczne, nazywane też efektem
 Seebecka.~W~obwodzie, który składa się~z~dwóch różnych metali, których końce są połączone~i~znajdują
 się~w~różnych temperaturach, płynie prąd elektryczny. Jednakże~w~celu pomiarów temperatury wymagany
-jest pomiar różnicy potencjałów (spadku napięcia), pojawiającego się między niepołączonymi końcami
-przewodników. Działanie zjawiska przedstawione zostało na rysunku \ref{img:thermoelectric-effect}.
-Zmierzona różnica potencjałów wyraża się równaniem:
+jest pomiar różnicy potencjałów (siły elektrotermicznej), pojawiającej się między niepołączonymi
+końcami przewodników. Działanie zjawiska przedstawione zostało na rysunku
+\ref{img:thermoelectric-effect}. Zmierzona różnica potencjałów wyraża się równaniem:
 
 \begin{equation}\label{eqn:voltage-thermocouple}
-  \Delta \varphi = S_{AB}\cdot\Delta T
+  E = S_{AB}\cdot\Delta T
 \end{equation}
 
 \begin{eqparams}
@@ -15,12 +15,16 @@ Zmierzona różnica potencjałów wyraża się równaniem:
 \end{eqparams}
 
 \addimage{0.6}{sensor-theory/thermoelectric-effect}{\label{img:thermoelectric-effect}Schemat
-  działania zjawiska termoeletrycznego} ~W~praktyce przy pomiarach termoogniwami wykorzystuje się
-układ przedstawiony na rysunku~\ref{img:thermocouple}. Jeżeli do połączenie wykorzystane zostałyby
-przewody wykonane~z~miedzi, to~w~miejscu połączenia pojawiłby się kolejne złącza termoelekryczne.
-Skutkowałoby to błędami~w~pomiarach temperatury.~W~celu uniknięcia takiej sytuacji stosuje się
-specjalne przewody kompensacyjne, które wykonane są~z~takiego samego materiału jak termoogniwo
-lub~z~materiałów~o~takich samych własnościach termoelektrycznych.
+  działania zjawiska termoeletrycznego}
+
+~W~praktyce przy pomiarach termoogniwami wykorzystuje się układ przedstawiony na
+rysunku~\ref{img:thermocouple}. Jeżeli do połączenie wykorzystane zostałyby przewody
+wykonane~z~miedzi, to~w~miejscu połączenia pojawiłby się kolejne złącza termoelekryczne. Nie
+pojawiłby się tutaj żaden błąd pomiarowy, ponieważ przy takim połączniu występuje tzw. ,,prawo
+trzeciego metalu'' -- dodatkowe siły termoelektryczne redukują się. Mimo to~w~układach
+pomiarowych~z~termoogniwami stosuje się specjalne przewody kompensacyjne, które wykonane
+są~z~takiego samego materiału jak przetwornik lub~z~materiałów~o~takich samych własnościach
+termoelektrycznych.
 
 \addimage{0.6}{sensor-theory/thermocouple}{\label{img:thermocouple}Schemat
   układu do pomiarów termoogniwami}
@@ -49,3 +53,9 @@ było zaobserwować różnice pomiędzy termoogniwami~a~termorezystorami.
     \bottomrule
   \end{tabular}
 \end{table}
+
+Wartości współczynnika Seebecka podane~w~tabeli \ref{tab:thermocouple} są wartościami uśrednionymi
+dla temperatury odniesienia 273.15K (0\degC). Aplikacja wykorzystuje takie wartości, ponieważ tylko
+symuluje realne przetworniki. Przy normalnych pomiarach nie możnaby przyjąć stałej wartości, gdyż
+jest ona zależna od temperatury otoczenia (wartości współczynnika nie będą stałe~w~całym zakresie
+pomiarowym danego termoogniwa) oraz innych parametrów samego czujnika.

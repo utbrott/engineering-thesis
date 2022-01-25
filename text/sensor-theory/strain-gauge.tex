@@ -47,16 +47,31 @@ Wyróżnia się trzy konfiguracje mostka tensometrycznego:
   \item [--] układ pełnomostkowy~z~czterema aktywnymi tensometrami.
 \end{itemize}
 Wszystkie układy mają różną skuteczność kompensacji wpływu temperatury. Na
-rysunku~\ref{img:strain-gauge} przedstawiony został schemat układu mostkowego.
+rysunku~\ref{img:strain-gauge} przedstawiony został schemat układu mostkowego. Natomiast rysunek
+\ref{img:strain-beam} przedstawia odzwierciedlenie takiego układu w montażu tensometrów na belce
+pomiarowej.
 
-\addimage{0.65}{sensor-theory/strain-gauge}{\label{img:strain-gauge}Schemat układu mostkowego}
+\addimage{0.75}{sensor-theory/strain-gauge}{\label{img:strain-gauge}Schemat układu mostkowego}
+
+\addimage{0.8}{sensor-theory/strain-beam}{\label{img:strain-beam}Schemat przykładowego montażu
+  układu mostkowego na belce pomiarowej}
+
+Wzór stosowany do obliczeń w układach mostkowych przedstawia się równaniem:
+
+\begin{equation}\label{eqn:bridge}
+  U_{wy} =S\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_2}{R_2}-
+  \cfrac{\Delta R_3}{R_3}+\cfrac{\Delta R_4}{R_4}\bigg)
+\end{equation}
+
+Poniżej przedstawione zostało jak przekształcany jest ten wzór w przypadku danej konfiguracji układu
+mostkowego.
 
 \paragraph{Układ ćwierćmostkowy:} Posiada jeden czynny tensometr (przykładowo~w~pierwszym ramieniu
-mostka), do wyznaczenia napięcia na wyjściu układu, korzystając~z~zależności \ref{eqn:strain-temp},
-stosuje się równanie:
+mostka), do wyznaczenia napięcia na wyjściu układu, korzystając~z~zależności \ref{eqn:strain-temp}
+oraz \ref{eqn:bridge}, stosuje się równanie:
 
 \begin{equation}\label{eqn:quater-bridge}
-  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\cfrac{\Delta R_1}{R_1}=\cfrac{1}{4}\cdot{U_z}\cdot({k}
+  U_{wy}=S\cdot{U_z}\cdot\cfrac{\Delta R_1}{R_1}=S\cdot{U_z}\cdot({k}
   \cdot\varepsilon_1+{k_1}\cdot\alpha_1\Delta{T_1})
 \end{equation}
 
@@ -67,8 +82,8 @@ wariant~z~tensometrami~w~sąsiednich ramionach (przykładowo pierwszym~i~trzecim
 wyjściowe wyznacza się~z~zależności:
 
 \begin{equation}\label{eqn:half-bridge-adj}
-  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_3}{R_3}\bigg)=
-  \cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)+{k_1}\cdot(\alpha_1
+  U_{wy}=S\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_3}{R_3}\bigg)=
+  S\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)+{k_1}\cdot(\alpha_1
   \Delta{T_1}-\alpha_3\Delta{T_3})\big)
 \end{equation}
 
@@ -76,16 +91,16 @@ Jeżeli obecne~w~układzie tensometry będą pracować~w~takiej samej temperatur
 zostanie skompensowany~i~napięcie wyjściowe będzie można wyznaczyć korzystając~z~równania:
 
 \begin{equation}\label{eqn:half-bridge-compensation}
-  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)\big)
+  U_{wy}=S\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_3)\big)
 \end{equation}
 
 Natomiast~w~przypadku zastosowania wariantu~o~ramionach przeciwległych (przykładowo~z~tensometrami
 włączonymi do ramion pierwszego~i~czwartego) to zależność \ref{eqn:half-bridge-adj} przyjmie postać:
 
 \begin{equation}
-  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_3}{R_3}\bigg)=
-  \cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1+\varepsilon_3)+{k_1}\cdot(\alpha_1
-  \Delta{T_1}+\alpha_3\Delta{T_3})\big)
+  U_{wy}=S\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}+\cfrac{\Delta R_4}{R_4}\bigg)=
+  S\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1+\varepsilon_4)+{k_1}\cdot(\alpha_1
+  \Delta{T_1}+\alpha_4\Delta{T_4})\big)
 \end{equation}
 ~i~nie nastąpi kompensacja, natomiast wynik pomiaru będzie zawierał błąd związany~z~negatywnym
 wpływem temperatury.
@@ -94,10 +109,10 @@ wpływem temperatury.
 Napięcie wyjściowe wyznacza się równaniem:
 
 \begin{align}
-  U_{wy} & =\cfrac{1}{4}\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}+\cfrac{\Delta R_2}{R_2}-
-  \cfrac{\Delta R_3}{R_3}+\cfrac{\Delta R_4}{R_4}\bigg)=              \nonumber               \\
-         & =\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot
-  (\varepsilon_1+\varepsilon_2-\varepsilon_3+\varepsilon_4)+{k_1}\cdot(\alpha_1\Delta{T_1}+
+  U_{wy} & =S\cdot{U_z}\cdot\bigg(\cfrac{\Delta R_1}{R_1}-\cfrac{\Delta R_2}{R_2}-
+  \cfrac{\Delta R_3}{R_3}+\cfrac{\Delta R_4}{R_4}\bigg)=              \nonumber    \\
+         & =S\cdot{U_z}\cdot\big({k}\cdot
+  (\varepsilon_1-\varepsilon_2-\varepsilon_3+\varepsilon_4)+{k_1}\cdot(\alpha_1\Delta{T_1}-
   \alpha_2\Delta{T_2}-\alpha_3\Delta{T_3}+\alpha_4\Delta{T_4})\big)
 \end{align}
 
@@ -107,7 +122,7 @@ korzystając~z~równania \ref{eqn:half-bridge-compensation} uzupełnionego~o~dwa
 tensometry~w~układzie:
 
 \begin{equation}
-  U_{wy}=\cfrac{1}{4}\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1+\varepsilon_2-\varepsilon_3+
+  U_{wy}=S\cdot{U_z}\cdot\big({k}\cdot(\varepsilon_1-\varepsilon_2-\varepsilon_3+
   \varepsilon_4)\big)
 \end{equation}
 
@@ -121,8 +136,10 @@ tensometry~w~układzie:
   \Delta{T_i} & różnica temperatur pomiędzy temperaturą otoczenia~a~odniesienia (20\degC)\\
 \end{eqparams}
 
-We wzorach pojawia się dodatkowa stała $k_1$, ponieważ rzeczywiste stałe tensometryczne
-odbiegają od wartości założonych przez producenta sensora~w~fazie projektowania.
+We wzorach pojawia się dodatkowa stała $k_1$, ponieważ rzeczywiste stałe tensometryczne odbiegają od
+wartości założonych przez producenta sensora~w~fazie projektowania. Wykorzystana została także stała
+$S$. Jest to stała określająca czułość mostka i do wszystkich obliczeń wykonywanych przez aplikcję
+przyjęta została jako $\nicefrac{1}{4}$.
 
 Problem braku kompensacji temperaturowej~w~układach ćwierćmostkowym oraz półmostkowym~z~ramionami
 przeciwległymi można rozwiązać poprzez zastosowanie tensometrów biernych. Montuje się je~w~pobliżu

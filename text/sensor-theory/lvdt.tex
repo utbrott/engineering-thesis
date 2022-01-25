@@ -46,23 +46,34 @@ litery ,,V'', obie strony są symetryczne względem punktu zerowego -- stanu zr�
 napięcie wyjściowe nie jest zerowe~w~stanie równowagi -- jest to spowodowane niewielkimi różnicami
 pomiędzy uzwojeniami wtórnymi \cite{sensory_wykład}.
 
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{sensor-theory/transfer-lvdt}
-  \caption{\label{img:transfer-lvdt}Przykładowa charakterystyka przetwarzania sensora
-    LVDT~w~zależności od przesunięcia.}
-\end{figure}
+\addimage{0.9}{sensor-theory/transfer-lvdt}{\label{img:transfer-lvdt}Przykładowa charakterystyka
+  przetwarzania sensora LVDT~w~zależności od przesunięcia}
 
 Sensory LVDT najczęściej stosuje się~w~zakresie $\pm$5 do $\pm$250mm, przy czym możliwe jest
 mierzenie większych zakresach, jednakże wiąże się to ze znacznym zwiększeniem rozmiarów samego
-przetwornika. ~W~układach przetworników LVDT napięcie mierzone na wyjściu ma bardzo małą amplitudę,
-dlatego stosuje się wzmacnianie takiego sygału. Jednakże~w~tym przypadku pojawia się ograniczenie
-związane~z~zaszumieniem.~W~tym celu stosuje się przetworniki fazoczułe. Układy te pozwalają na
-wydzielnie~z~zaszumionego, wzmocnionego sygnału, tylko takie sygnały, których częstotliwość oraz
-faza są zgodne~z~odniesieniem. Dzięki temu można mierzyć sygnały na poziomie nawet
-nanowoltów~\cite{tumanski2007}. Wykorzystanie przetwornika fazoczułego przy pomiarach przetwornikiem
-LVDT pozwala także na używanie jego pełnego zakresu, ponieważ możliwe jest określenie po której
-stronie względem punktu równowagi znajduje się rdzeń.
+przetwornika. Wykorzystanie przetwornika fazoczułego przy pomiarach przetwornikiem
+LVDT pozwala na używanie jego pełnego zakresu, ponieważ możliwe jest określenie po której
+stronie względem punktu równowagi znajduje się rdzeń. Napięcie wyjściowe z układu określa się wtedy
+równianiem:
+
+\begin{equation}
+  U_{wy}=k\cdot{U_{wej}}\cdot\cos{(\varphi)}
+\end{equation}
+
+\begin{eqparams}
+  k & współczynnik proporcjonalności,\\
+  U_{wej} & napięcie wejściowe,\\
+  \varphi & przesunięcie fazowe.
+\end{eqparams}
+
+Jeżeli napięcie wejściowe oraz wyjściowe będą w fazie, to kąt przesunięcia fazowego będzie
+równy~0$^\circ$. Cosinus będzie wtedy równy 1. Natomiast w przeciwnej sytuacji (sygnały w
+przeciwfazie), kąt $\varphi$ będzie równy 180$^\circ$, a cosinus będzie równy -1. Stosując
+przetwornik fazoczuły przedstawiona powyżej charakterystyka przetwornika przyjmie postać
+przedstawioną na rysunku \ref{img:transfer-lvdt-full}.
+
+\addimage{0.9}{sensor-theory/transfer-lvdt-full}{\label{img:transfer-lvdt-full}Charakterystyka
+  przetwarzania sensora LVDT po zastosowaniu przetwornika fazoczułego}
 
 Sensory można stosować~w~dwóch typach układu: AC/AC oraz DC/DC.~W~przypadku układów
 napięcia przemiennego otrzymuje się teoretycznie nieskończoną rozdzielczość pomiarową, większą

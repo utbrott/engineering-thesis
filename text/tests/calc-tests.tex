@@ -31,15 +31,15 @@ odpowiednie wartości do wzoru otrzymane zostały następujące wyniki:
   \bigg(1-\frac{0^2}{2\cdot (20\cdot 10^{-3})^2}\bigg)
 \end{equation*}
 \begin{equation*}
-  \therefore\quad U_{wy} = 0
+  \therefore\quad U_{wy} = 0\text{mV}
 \end{equation*}
 
 Dla pozostałych wartości przemieszczenia rdzenia:
 \begin{align*}
-  U_{wy} & =5.2063\approxeq 5.21\quad\text{dla}\quad x=7  \\
-  U_{wy} & =6.4085\approxeq 6.41\quad\text{dla}\quad x=9  \\
-  U_{wy} & =2.3501\approxeq 2.35\quad\text{dla}\quad x=3  \\
-  U_{wy} & =8.5418\approxeq 8.54\quad\text{dla}\quad x=15
+  U_{wy} & =5.2063\approxeq 5.21\text{mV}\quad\text{dla}\quad x=7\text{mm}  \\
+  U_{wy} & =6.4085\approxeq 6.41\text{mV}\quad\text{dla}\quad x=9\text{mm}  \\
+  U_{wy} & =2.3501\approxeq 2.35\text{mV}\quad\text{dla}\quad x=3\text{mm}  \\
+  U_{wy} & =8.5418\approxeq 8.54\text{mV}\quad\text{dla}\quad x=15\text{mm}
 \end{align*}
 
 Porównując otrzymane wielkości~z~wynikami, które funkcja drukuje~w~konsoli deweloperskiej, co
@@ -49,7 +49,7 @@ dla sensora LVDT, który przedstawiony jest na rysunku \ref{img:graph-lvdt}~z~wy
 przedstawionym na rysunku \ref{img:transfer-lvdt}, możliwe jest stwierdzenie, że wykres jest
 prawidłowy.
 
-\addimage{0.45}{code/tests-lvdt}{\label{img:tests-lvdt}Wydruk~z~konsoli pokazujący generowane przez
+\addimage{0.35}{code/tests-lvdt}{\label{img:tests-lvdt}Wydruk~z~konsoli pokazujący generowane przez
   aplikację wartości}
 
 \addimage{0.7}{app-ui/graph-lvdt}{\label{img:graph-lvdt}Wygenerowany przez aplikację wykres
@@ -60,12 +60,13 @@ przedstwionych~w~rozdziałach \ref{sect:theory-temperature} oraz \ref{sect:theor
 jakie wartości dla poprawnych odpowiedzi powinny pojawić się~w~konsoli deweloperskiej.
 
 \paragraph{Sensory temperatury:}~W~przypadku termorezystorów metalowych aplikacja wygenerowała
-następujące wartości tempertury: 0, 180, 245, 140, 500. Korzystając ze wzoru
-\ref{eqn:resistance-rtd} wyznaczone zostały wartości: 100, 167.122, 191.3605, 152.206, 286.45;
+następujące wartości tempertury: 0, 180, 245, 140, 500 (\degC). Korzystając ze wzoru
+\ref{eqn:resistance-rtd} wyznaczone zostały wartości: 100, 167.122, 191.3605, 152.206, 286.45
+($\Omega$);
 
-Natomiast dla termogniw wylosowane zostały temperatury: 0, 205, 105, 340, 500.
+Natomiast dla termogniw wylosowane zostały temperatury: 0, 205, 105, 340, 500 (\degC).
 Korzystając~z~równania \ref{eqn:voltage-thermocouple} wyliczono wartości: 0, 10.455, 5.355, 17.34,
-25.5;
+25.5 (mV);
 
 Porównując otrzymane wyniki~z~wartościami wyznaczonymi przez aplikację, przedstawionymi na
 rysunkach~\ref{img:tests-rtd} oraz \ref{img:tests-thermocouple} można stwierdzić, że
@@ -74,14 +75,24 @@ generowane przez kod wielkości do weryfikacji odpowiedzi są prawidłowe.
 \begin{figure}[!htbp]
   \hfill
   \subfloat[][Wyniki dla ćwiczenia z
-    termorezystorami]{\includegraphics[width=0.45\textwidth]{code/tests-rtd}\label{img:tests-rtd}}
+    termorezystorami]{\includegraphics[width=0.35\textwidth]{code/tests-rtd}\label{img:tests-rtd}}
   \hfill
   \subfloat[][Wyniki dla ćwiczenia z
-    termoogniwami]{\includegraphics[width=0.45\textwidth]{code/tests-thermocouple}\label{img:tests-thermocouple}}
+    termoogniwami]{\includegraphics[width=0.35\textwidth]{code/tests-thermocouple}\label{img:tests-thermocouple}}
   \hfill
   \caption{\label{img:calc-console-temperature}Wydruk~z~konsoli pokazujący generowane przez
     aplikację wartości}
 \end{figure}
+
+Na podstawie wyznaczonych wartości aplikacja wygenerowała wykresy przedstawione na rysunkach
+\ref{img:graph-rtd} oraz \ref{img:graph-thermocouple}. Otrzymane wykresy są zgodne~z~teorią
+przedstawioną wzorami \ref{eqn:resistance-rtd} oraz \ref{eqn:voltage-thermocouple}.
+
+\addimage{0.7}{app-ui/graph-rtd}{\label{img:graph-rtd}Wygenerowana charakterystyka dla
+  termorezystorów}
+
+\addimage{0.7}{app-ui/graph-thermocouple}{\label{img:graph-thermocouple}Wygenerowana charakterystyka
+  dla termoogniw}
 
 Na przykładzie termorezystorów zweryfikowane zostało generowanie charakterystyk dynamicznych dla
 sensorów temperatury. Na rysunku \ref{img:graph-temperature-dynamic} przedstawiony został wykres,
@@ -92,19 +103,21 @@ zgodny~z~teorią.
 \addimage{0.6}{app-ui/graph-temperature-dynamic}{\label{img:graph-temperature-dynamic}Wygenerowany
   przez aplikację wykres charakterystyki dynamicznej dla termorezystora metalowego}
 
+\FloatBarrier
 \paragraph{Tensometry:} Aby zweryfikować poprawność wyników generowanych przez aplikację należało
 wyznaczyć wartości napięcia na wyjściu mostka. Sprawdzony został przypadek gdy nie bierze się pod
 uwagę wpłwu temperatury na pracę układu. Do obliczeń wykorzystano równanie \ref{eqn:quater-bridge}
 przy czym nie brana była pod uwagę składowa~z~temperaturą. Dla zadania generowane są wartości
-odkształcenia jakim poddawne są tensometry, aplikacja wylosowała następujące wartości: 3, 2.2,
-1.6, 2.5, 1.9; Wykonując obliczenia otrzymano następujące wartości: 9.75, 7.15, 5.2, 8.125, 6.175;
+odkształcenia jakim poddawne są tensometry, aplikacja wylosowała następujące wartości: 3, 2.2, 1.6,
+2.5, 1.9 ($\mu\varepsilon$); Wykonując obliczenia otrzymano następujące wartości: 9.75, 7.15, 5.2,
+8.125, 6.175 (mV);
 
 Porównując otrzymane wyniki~z~wartościami wyznaczonymi przez aplikację, przedstawionymi na
 rysunku~\ref{img:tests-strain-no-temp} można stwierdzić, że generowane odpowiedzi są prawidłowe.
 Na rysunku \ref{img:graph-strain} widać, że generowany przez aplikację wykres odzwierciedla wzrost
 napięcia na wyjściu układu wraz~z~rosnącą wartością odkształcenia.
 
-\addimage{0.45}{code/tests-strain-no-temp}{\label{img:tests-strain-no-temp}Wydruk~z~konsoli
+\addimage{0.35}{code/tests-strain-no-temp}{\label{img:tests-strain-no-temp}Wydruk~z~konsoli
   pokazujący generowane przez aplikację wartości}
 
 \addimage{0.7}{app-ui/graph-strain}{\label{img:graph-strain}Wykres przedstawiający zależność
