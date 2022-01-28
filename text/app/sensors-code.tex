@@ -2,8 +2,8 @@
 % teorii~w~formie kodu
 Aplikacja korzysta~z~teorii sensorów pomiarowych (przedstawionej~w~rozdziale
 \ref{sect:sensor-theory}) do generowania danych do zadań oraz weryfikowania poprawności odpowiedzi
- wpisywanych przez użytkownika. Każde zaimplementowane ćwiczenie laboratoryjne posiada zestaw
- funkcji, które przekształcają wzory teoretyczne do postaci kodu źródłowego.
+wpisywanych przez użytkownika. Każde zaimplementowane ćwiczenie laboratoryjne posiada zestaw
+funkcji, które przekształcają wzory teoretyczne do postaci kodu źródłowego.
 
 Na funkcję składają się:
 \begin{itemize}
@@ -16,8 +16,8 @@ Na funkcję składają się:
 Przykładowa funkcja, składająca się~z~powyższych elementów, przedstawiona została~w~listingu
 \ref{lst:sensor-formula}.
 
-\addsnippet{code/sensor-formula}{\label{lst:sensor-formula}Implementacja wzoru dla przetwornika
-  LVDT~w~kodzie aplikacji}
+\addsnippet{code/sensor-formula}{\label{lst:sensor-formula}Implementacja wzoru \ref{eqn:theory-lvdt}
+  dla przetwornika LVDT~w~kodzie aplikacji}
 
 Zmienne wejściowe, które przyjmuje dana funkcja pobierane są~z~Context, ponieważ tam przechowywane
 są informacje~o~obecnie wybranej konfiguracji sensora. Wartości stałe dla każdego wzoru znajdują się

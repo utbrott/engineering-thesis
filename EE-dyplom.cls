@@ -796,7 +796,7 @@
 \newcommand{\addsnippet}[2]{
     \begin{figure}[!htb]
         \centering
-        \includegraphics[width=0.85\textwidth]{#1}
+        \includegraphics[width=0.9\textwidth]{#1}
         \captionof{lstlisting}{#2}
       \end{figure}
 }

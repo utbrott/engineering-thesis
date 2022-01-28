@@ -1,16 +1,16 @@
 Generowanie wykresów~w~aplikacji wykorzystuje do tego bibliotekę \textit{Recharts}. Udostępnia ona
-komponenty \texttt{LineChart, CartesianGrid, XAxis, YAxis, Line}, które połączone pozwalają na
-wyświetlanie wykresów. Dane, które mają być wykreślone podawane są poprzez zewnętrzne atrybuty,
-ponieważ generowane są~w~komponencie danego ćwiczenia laboratoryjnego (implementacja przedstawiona
-została~w~rozdziale \ref{sect:laboratory}).
+komponenty \texttt{LineChart}, \texttt{CartesianGrid}, \texttt{XAxis}, \texttt{YAxis},
+\texttt{Line}, które połączone pozwalają na wyświetlanie wykresów. Dane, które mają być wykreślone
+podawane są poprzez zewnętrzne atrybuty, ponieważ generowane są~w~komponencie danego ćwiczenia
+laboratoryjnego (implementacja przedstawiona została~w~rozdziale \ref{sect:laboratory}).
 
 Dodatkowo wykorzystana została biblioteka \textit{recharts-to-png}, która pozwala na zapisywanie
 wykresów jako obrazów~w~formacie PNG, aby można było je~w~późniejszym czasie wykorzystać,
 przykładowo pisząc sprawozdanie~z~wykonanego ćwiczenia laboratoryjnego. Implementacja tej
-funkcjonalności przedstawiona została~w~listingu \ref{lst:chart-download}.
+funkcji przedstawiona została~w~listingu \ref{lst:chart-download}.
 
-\addsnippet{code/chart-download}{\label{lst:chart-download}Implementacja funkcjonalności
-  zapisywania wykresów jako obrazy}
+\addsnippet{code/chart-download}{\label{lst:chart-download}Implementacja funkcji zapisywania
+  wykresów jako obrazy}
 
 Aplikacja posiada dwa warianty komponetu do wyświetlania wykresu -- \texttt{SingleLineChart} oraz
 \texttt{MultiLineChart}. Wykorzystywane są odpowiednio, tam gdzie potrzebny jest wykres, który

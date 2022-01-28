@@ -7,9 +7,8 @@ aplikacja uruchomiona jest na serwerze deweloperskim -- nie ma do niej dostępu~
 aplikacji. Dodatkowo przeprowadzone zostały testy czy generowane przez aplikacje produkują
 prawidłowe wartości do generowania wykresów oraz czy wykresy te są wykreślone prawidłowo.
 
-Na przykładzie przetwornika LVDT (przedstawionego~w~rozdziale
-\ref{sect:theory-lvdt}) wykonane zostały obliczenia dla takiej samej konfiguracji jak wybrana
-została~w~aplikacji:
+Na przykładzie przetwornika LVDT (przedstawionego~w~rozdziale \ref{sect:theory-lvdt}) wykonane
+zostały obliczenia dla takiej samej konfiguracji jak wybrana została~w~aplikacji:
 \begin{itemize}
   \item [--]  liczba zwojów~w~uzwojeniu pierwotnym $N_p$ = 1000,
   \item [--]  napięcie wejściowe $U_{wej}$ = 5V,
@@ -44,17 +43,20 @@ Dla pozostałych wartości przemieszczenia rdzenia:
 
 Porównując otrzymane wielkości~z~wynikami, które funkcja drukuje~w~konsoli deweloperskiej, co
 przedstawione zostało na rysunku \ref{img:tests-lvdt}, można stwierdzić, że implementacja
-wzorów~w~aplikacji jest prawidłowa. Natomiast jeżeli porówna się wygenerowany przez aplikację wykres
-dla sensora LVDT, który przedstawiony jest na rysunku \ref{img:graph-lvdt}~z~wykresem teoretycznym,
-przedstawionym na rysunku \ref{img:transfer-lvdt}, możliwe jest stwierdzenie, że wykres jest
-prawidłowy.
+wzorów~w~aplikacji jest prawidłowa.
 
 \addimage{0.35}{code/tests-lvdt}{\label{img:tests-lvdt}Wydruk~z~konsoli pokazujący generowane przez
   aplikację wartości}
 
+Natomiast jeżeli porówna się wygenerowany przez aplikację wykres
+dla sensora LVDT, który przedstawiony jest na rysunku \ref{img:graph-lvdt}~z~wykresem teoretycznym,
+przedstawionym na rysunku \ref{img:transfer-lvdt}, możliwe jest stwierdzenie, że wykres jest
+prawidłowy.
+
 \addimage{0.7}{app-ui/graph-lvdt}{\label{img:graph-lvdt}Wygenerowany przez aplikację wykres
   zależności dla sensora LVDT}
 
+\FloatBarrier
 Wykonane zostały także testy pozostałych ćwiczeń laboratoryjnych. Na podstawie wzorów
 przedstwionych~w~rozdziałach \ref{sect:theory-temperature} oraz \ref{sect:theory-strain} obliczono
 jakie wartości dla poprawnych odpowiedzi powinny pojawić się~w~konsoli deweloperskiej.
@@ -74,11 +76,11 @@ generowane przez kod wielkości do weryfikacji odpowiedzi są prawidłowe.
 
 \begin{figure}[!htbp]
   \hfill
-  \subfloat[][Wyniki dla ćwiczenia z
-    termorezystorami]{\includegraphics[width=0.35\textwidth]{code/tests-rtd}\label{img:tests-rtd}}
+  \subfloat[][Wyniki dla termorezystorów]{\includegraphics[width=0.35\textwidth]{code/tests-rtd}
+    \label{img:tests-rtd}}
   \hfill
-  \subfloat[][Wyniki dla ćwiczenia z
-    termoogniwami]{\includegraphics[width=0.35\textwidth]{code/tests-thermocouple}\label{img:tests-thermocouple}}
+  \subfloat[][Wyniki dla termoogniw]{\includegraphics[width=0.35\textwidth]{code/tests-thermocouple}
+    \label{img:tests-thermocouple}}
   \hfill
   \caption{\label{img:calc-console-temperature}Wydruk~z~konsoli pokazujący generowane przez
     aplikację wartości}
@@ -88,11 +90,16 @@ Na podstawie wyznaczonych wartości aplikacja wygenerowała wykresy przedstawion
 \ref{img:graph-rtd} oraz \ref{img:graph-thermocouple}. Otrzymane wykresy są zgodne~z~teorią
 przedstawioną wzorami \ref{eqn:resistance-rtd} oraz \ref{eqn:voltage-thermocouple}.
 
-\addimage{0.7}{app-ui/graph-rtd}{\label{img:graph-rtd}Wygenerowana charakterystyka dla
-  termorezystorów}
-
-\addimage{0.7}{app-ui/graph-thermocouple}{\label{img:graph-thermocouple}Wygenerowana charakterystyka
-  dla termoogniw}
+\begin{figure}[!htbp]
+  \hfill
+  \subfloat[][Charakterystyka dla termorezystorów]{\includegraphics[width=0.50\textwidth]
+    {app-ui/graph-rtd}\label{img:graph-rtd}}
+  \hfill
+  \subfloat[][Charakterystyka dla termoogniw]{\includegraphics[width=0.50\textwidth]
+    {app-ui/graph-thermocouple}\label{img:graph-thermocouple}}
+  \hfill
+  \caption{\label{img:graphs-temperature}Wygenerowane przez aplikację wykresy charakterystyk}
+\end{figure}
 
 Na przykładzie termorezystorów zweryfikowane zostało generowanie charakterystyk dynamicznych dla
 sensorów temperatury. Na rysunku \ref{img:graph-temperature-dynamic} przedstawiony został wykres,
